@@ -1,0 +1,19 @@
+package emu.grasscutter.server.packet.recv;
+
+import emu.grasscutter.net.packet.Opcodes;
+import emu.grasscutter.net.packet.PacketHandler;
+import emu.grasscutter.net.packet.PacketOpcodes;
+import emu.grasscutter.net.proto.UpdatePlayerShowNameCardListReqOuterClass;
+import emu.grasscutter.server.game.GameSession;
+import emu.grasscutter.server.packet.send.PacketUpdatePlayerShowNameCardListRsp;
+
+@Opcodes(PacketOpcodes.UpdatePlayerShowNameCardListReq)
+/* loaded from: grasscutter.jar:emu/grasscutter/server/packet/recv/HandlerUpdatePlayerShowNameCardListReq.class */
+public class HandlerUpdatePlayerShowNameCardListReq extends PacketHandler {
+    @Override // emu.grasscutter.net.packet.PacketHandler
+    public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
+        UpdatePlayerShowNameCardListReqOuterClass.UpdatePlayerShowNameCardListReq req = UpdatePlayerShowNameCardListReqOuterClass.UpdatePlayerShowNameCardListReq.parseFrom(payload);
+        session.getPlayer().setShowNameCardList(req.getShowNameCardIdListList());
+        session.send(new PacketUpdatePlayerShowNameCardListRsp(req.getShowNameCardIdListList()));
+    }
+}

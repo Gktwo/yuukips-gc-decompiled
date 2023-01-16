@@ -1,0 +1,532 @@
+package emu.grasscutter.net.proto;
+
+import com.google.protobuf.AbstractParser;
+import com.google.protobuf.ByteString;
+import com.google.protobuf.CodedInputStream;
+import com.google.protobuf.CodedOutputStream;
+import com.google.protobuf.Descriptors;
+import com.google.protobuf.ExtensionRegistry;
+import com.google.protobuf.ExtensionRegistryLite;
+import com.google.protobuf.GeneratedMessageV3;
+import com.google.protobuf.Internal;
+import com.google.protobuf.InvalidProtocolBufferException;
+import com.google.protobuf.Message;
+import com.google.protobuf.MessageOrBuilder;
+import com.google.protobuf.Parser;
+import com.google.protobuf.UnknownFieldSet;
+import java.io.IOException;
+import java.io.InputStream;
+import java.nio.ByteBuffer;
+
+/* loaded from: grasscutter.jar:emu/grasscutter/net/proto/CharAmusementStageDataOuterClass.class */
+public final class CharAmusementStageDataOuterClass {
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001cCharAmusementStageData.proto\"P\n\u0016CharAmusementStageData\u0012\u0013\n\u000bfinish_time\u0018\u0003 \u0001(\r\u0012\u000f\n\u0007is_open\u0018\u0006 \u0001(\b\u0012\u0010\n\bstage_id\u0018\u0004 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static final Descriptors.Descriptor internal_static_CharAmusementStageData_descriptor = getDescriptor().getMessageTypes().get(0);
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_CharAmusementStageData_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_CharAmusementStageData_descriptor, new String[]{"FinishTime", "IsOpen", "StageId"});
+
+    /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/CharAmusementStageDataOuterClass$CharAmusementStageDataOrBuilder.class */
+    public interface CharAmusementStageDataOrBuilder extends MessageOrBuilder {
+        int getFinishTime();
+
+        boolean getIsOpen();
+
+        int getStageId();
+    }
+
+    private CharAmusementStageDataOuterClass() {
+    }
+
+    public static void registerAllExtensions(ExtensionRegistryLite registry) {
+    }
+
+    public static void registerAllExtensions(ExtensionRegistry registry) {
+        registerAllExtensions((ExtensionRegistryLite) registry);
+    }
+
+    /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/CharAmusementStageDataOuterClass$CharAmusementStageData.class */
+    public static final class CharAmusementStageData extends GeneratedMessageV3 implements CharAmusementStageDataOrBuilder {
+        private static final long serialVersionUID = 0;
+        public static final int FINISH_TIME_FIELD_NUMBER = 3;
+        private int finishTime_;
+        public static final int IS_OPEN_FIELD_NUMBER = 6;
+        private boolean isOpen_;
+        public static final int STAGE_ID_FIELD_NUMBER = 4;
+        private int stageId_;
+        private byte memoizedIsInitialized;
+        private static final CharAmusementStageData DEFAULT_INSTANCE = new CharAmusementStageData();
+        private static final Parser<CharAmusementStageData> PARSER = new AbstractParser<CharAmusementStageData>() { // from class: emu.grasscutter.net.proto.CharAmusementStageDataOuterClass.CharAmusementStageData.1
+            @Override // com.google.protobuf.Parser
+            public CharAmusementStageData parsePartialFrom(CodedInputStream input, ExtensionRegistryLite extensionRegistry) throws InvalidProtocolBufferException {
+                return new CharAmusementStageData(input, extensionRegistry);
+            }
+        };
+
+        private CharAmusementStageData(GeneratedMessageV3.Builder<?> builder) {
+            super(builder);
+            this.memoizedIsInitialized = -1;
+        }
+
+        private CharAmusementStageData() {
+            this.memoizedIsInitialized = -1;
+        }
+
+        /* access modifiers changed from: protected */
+        @Override // com.google.protobuf.GeneratedMessageV3
+        public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unused) {
+            return new CharAmusementStageData();
+        }
+
+        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageOrBuilder
+        public final UnknownFieldSet getUnknownFields() {
+            return this.unknownFields;
+        }
+
+        private CharAmusementStageData(CodedInputStream input, ExtensionRegistryLite extensionRegistry) throws InvalidProtocolBufferException {
+            this();
+            UnknownFieldSet.Builder unknownFields;
+            if (extensionRegistry == null) {
+                throw new NullPointerException();
+            }
+            try {
+                unknownFields = UnknownFieldSet.newBuilder();
+                boolean done = false;
+                while (!done) {
+                    try {
+                        try {
+                            int tag = input.readTag();
+                            switch (tag) {
+                                case 0:
+                                    done = true;
+                                    break;
+                                case 24:
+                                    this.finishTime_ = input.readUInt32();
+                                    break;
+                                case 32:
+                                    this.stageId_ = input.readUInt32();
+                                    break;
+                                case 48:
+                                    this.isOpen_ = input.readBool();
+                                    break;
+                                default:
+                                    if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                                        break;
+                                    } else {
+                                        done = true;
+                                        break;
+                                    }
+                            }
+                        } catch (InvalidProtocolBufferException e) {
+                            throw e.setUnfinishedMessage(this);
+                        }
+                    } catch (IOException e2) {
+                        throw new InvalidProtocolBufferException(e2).setUnfinishedMessage(this);
+                    }
+                }
+            } finally {
+                this.unknownFields = unknownFields.build();
+                makeExtensionsImmutable();
+            }
+        }
+
+        public static final Descriptors.Descriptor getDescriptor() {
+            return CharAmusementStageDataOuterClass.internal_static_CharAmusementStageData_descriptor;
+        }
+
+        @Override // com.google.protobuf.GeneratedMessageV3
+        protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
+            return CharAmusementStageDataOuterClass.internal_static_CharAmusementStageData_fieldAccessorTable.ensureFieldAccessorsInitialized(CharAmusementStageData.class, Builder.class);
+        }
+
+        @Override // emu.grasscutter.net.proto.CharAmusementStageDataOuterClass.CharAmusementStageDataOrBuilder
+        public int getFinishTime() {
+            return this.finishTime_;
+        }
+
+        @Override // emu.grasscutter.net.proto.CharAmusementStageDataOuterClass.CharAmusementStageDataOrBuilder
+        public boolean getIsOpen() {
+            return this.isOpen_;
+        }
+
+        @Override // emu.grasscutter.net.proto.CharAmusementStageDataOuterClass.CharAmusementStageDataOrBuilder
+        public int getStageId() {
+            return this.stageId_;
+        }
+
+        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
+        public final boolean isInitialized() {
+            byte isInitialized = this.memoizedIsInitialized;
+            if (isInitialized == 1) {
+                return true;
+            }
+            if (isInitialized == 0) {
+                return false;
+            }
+            this.memoizedIsInitialized = 1;
+            return true;
+        }
+
+        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
+        public void writeTo(CodedOutputStream output) throws IOException {
+            if (this.finishTime_ != 0) {
+                output.writeUInt32(3, this.finishTime_);
+            }
+            if (this.stageId_ != 0) {
+                output.writeUInt32(4, this.stageId_);
+            }
+            if (this.isOpen_) {
+                output.writeBool(6, this.isOpen_);
+            }
+            this.unknownFields.writeTo(output);
+        }
+
+        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
+        public int getSerializedSize() {
+            int size = this.memoizedSize;
+            if (size != -1) {
+                return size;
+            }
+            int size2 = 0;
+            if (this.finishTime_ != 0) {
+                size2 = 0 + CodedOutputStream.computeUInt32Size(3, this.finishTime_);
+            }
+            if (this.stageId_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(4, this.stageId_);
+            }
+            if (this.isOpen_) {
+                size2 += CodedOutputStream.computeBoolSize(6, this.isOpen_);
+            }
+            int size3 = size2 + this.unknownFields.getSerializedSize();
+            this.memoizedSize = size3;
+            return size3;
+        }
+
+        @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
+        public boolean equals(Object obj) {
+            if (obj == this) {
+                return true;
+            }
+            if (!(obj instanceof CharAmusementStageData)) {
+                return equals(obj);
+            }
+            CharAmusementStageData other = (CharAmusementStageData) obj;
+            return getFinishTime() == other.getFinishTime() && getIsOpen() == other.getIsOpen() && getStageId() == other.getStageId() && this.unknownFields.equals(other.unknownFields);
+        }
+
+        @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
+        public int hashCode() {
+            if (this.memoizedHashCode != 0) {
+                return this.memoizedHashCode;
+            }
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 3)) + getFinishTime())) + 6)) + Internal.hashBoolean(getIsOpen()))) + 4)) + getStageId())) + this.unknownFields.hashCode();
+            this.memoizedHashCode = hash;
+            return hash;
+        }
+
+        public static CharAmusementStageData parseFrom(ByteBuffer data) throws InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static CharAmusementStageData parseFrom(ByteBuffer data, ExtensionRegistryLite extensionRegistry) throws InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static CharAmusementStageData parseFrom(ByteString data) throws InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static CharAmusementStageData parseFrom(ByteString data, ExtensionRegistryLite extensionRegistry) throws InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static CharAmusementStageData parseFrom(byte[] data) throws InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static CharAmusementStageData parseFrom(byte[] data, ExtensionRegistryLite extensionRegistry) throws InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static CharAmusementStageData parseFrom(InputStream input) throws IOException {
+            return (CharAmusementStageData) GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static CharAmusementStageData parseFrom(InputStream input, ExtensionRegistryLite extensionRegistry) throws IOException {
+            return (CharAmusementStageData) GeneratedMessageV3.parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static CharAmusementStageData parseDelimitedFrom(InputStream input) throws IOException {
+            return (CharAmusementStageData) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+        }
+
+        public static CharAmusementStageData parseDelimitedFrom(InputStream input, ExtensionRegistryLite extensionRegistry) throws IOException {
+            return (CharAmusementStageData) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static CharAmusementStageData parseFrom(CodedInputStream input) throws IOException {
+            return (CharAmusementStageData) GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static CharAmusementStageData parseFrom(CodedInputStream input, ExtensionRegistryLite extensionRegistry) throws IOException {
+            return (CharAmusementStageData) GeneratedMessageV3.parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
+        public Builder newBuilderForType() {
+            return newBuilder();
+        }
+
+        public static Builder newBuilder() {
+            return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(CharAmusementStageData prototype) {
+            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
+        public Builder toBuilder() {
+            return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        /* access modifiers changed from: protected */
+        @Override // com.google.protobuf.GeneratedMessageV3
+        public Builder newBuilderForType(GeneratedMessageV3.BuilderParent parent) {
+            return new Builder(parent);
+        }
+
+        /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/CharAmusementStageDataOuterClass$CharAmusementStageData$Builder.class */
+        public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements CharAmusementStageDataOrBuilder {
+            private int finishTime_;
+            private boolean isOpen_;
+            private int stageId_;
+
+            public static final Descriptors.Descriptor getDescriptor() {
+                return CharAmusementStageDataOuterClass.internal_static_CharAmusementStageData_descriptor;
+            }
+
+            @Override // com.google.protobuf.GeneratedMessageV3.Builder
+            protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
+                return CharAmusementStageDataOuterClass.internal_static_CharAmusementStageData_fieldAccessorTable.ensureFieldAccessorsInitialized(CharAmusementStageData.class, Builder.class);
+            }
+
+            private Builder() {
+                maybeForceBuilderInitialization();
+            }
+
+            private Builder(GeneratedMessageV3.BuilderParent parent) {
+                super(parent);
+                maybeForceBuilderInitialization();
+            }
+
+            private void maybeForceBuilderInitialization() {
+                if (CharAmusementStageData.alwaysUseFieldBuilders) {
+                }
+            }
+
+            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
+            public Builder clear() {
+                clear();
+                this.finishTime_ = 0;
+                this.isOpen_ = false;
+                this.stageId_ = 0;
+                return this;
+            }
+
+            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder, com.google.protobuf.MessageOrBuilder
+            public Descriptors.Descriptor getDescriptorForType() {
+                return CharAmusementStageDataOuterClass.internal_static_CharAmusementStageData_descriptor;
+            }
+
+            @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
+            public CharAmusementStageData getDefaultInstanceForType() {
+                return CharAmusementStageData.getDefaultInstance();
+            }
+
+            @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
+            public CharAmusementStageData build() {
+                CharAmusementStageData result = buildPartial();
+                if (result.isInitialized()) {
+                    return result;
+                }
+                throw newUninitializedMessageException((Message) result);
+            }
+
+            @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
+            public CharAmusementStageData buildPartial() {
+                CharAmusementStageData result = new CharAmusementStageData(this);
+                result.finishTime_ = this.finishTime_;
+                result.isOpen_ = this.isOpen_;
+                result.stageId_ = this.stageId_;
+                onBuilt();
+                return result;
+            }
+
+            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder, com.google.protobuf.MessageLite.Builder, java.lang.Object, com.google.protobuf.Message.Builder
+            public Builder clone() {
+                return clone();
+            }
+
+            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
+            public Builder setField(Descriptors.FieldDescriptor field, Object value) {
+                return setField(field, value);
+            }
+
+            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
+            public Builder clearField(Descriptors.FieldDescriptor field) {
+                return clearField(field);
+            }
+
+            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
+            public Builder clearOneof(Descriptors.OneofDescriptor oneof) {
+                return clearOneof(oneof);
+            }
+
+            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
+            public Builder setRepeatedField(Descriptors.FieldDescriptor field, int index, Object value) {
+                return setRepeatedField(field, index, value);
+            }
+
+            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
+            public Builder addRepeatedField(Descriptors.FieldDescriptor field, Object value) {
+                return addRepeatedField(field, value);
+            }
+
+            @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
+            public Builder mergeFrom(Message other) {
+                if (other instanceof CharAmusementStageData) {
+                    return mergeFrom((CharAmusementStageData) other);
+                }
+                mergeFrom(other);
+                return this;
+            }
+
+            public Builder mergeFrom(CharAmusementStageData other) {
+                if (other == CharAmusementStageData.getDefaultInstance()) {
+                    return this;
+                }
+                if (other.getFinishTime() != 0) {
+                    setFinishTime(other.getFinishTime());
+                }
+                if (other.getIsOpen()) {
+                    setIsOpen(other.getIsOpen());
+                }
+                if (other.getStageId() != 0) {
+                    setStageId(other.getStageId());
+                }
+                mergeUnknownFields(other.unknownFields);
+                onChanged();
+                return this;
+            }
+
+            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.MessageLiteOrBuilder
+            public final boolean isInitialized() {
+                return true;
+            }
+
+            @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
+            public Builder mergeFrom(CodedInputStream input, ExtensionRegistryLite extensionRegistry) throws IOException {
+                CharAmusementStageData parsedMessage = null;
+                try {
+                    try {
+                        parsedMessage = CharAmusementStageData.PARSER.parsePartialFrom(input, extensionRegistry);
+                        if (parsedMessage != null) {
+                            mergeFrom(parsedMessage);
+                        }
+                        return this;
+                    } catch (InvalidProtocolBufferException e) {
+                        parsedMessage = (CharAmusementStageData) e.getUnfinishedMessage();
+                        throw e.unwrapIOException();
+                    }
+                } catch (Throwable th) {
+                    if (parsedMessage != null) {
+                        mergeFrom(parsedMessage);
+                    }
+                    throw th;
+                }
+            }
+
+            @Override // emu.grasscutter.net.proto.CharAmusementStageDataOuterClass.CharAmusementStageDataOrBuilder
+            public int getFinishTime() {
+                return this.finishTime_;
+            }
+
+            public Builder setFinishTime(int value) {
+                this.finishTime_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearFinishTime() {
+                this.finishTime_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.CharAmusementStageDataOuterClass.CharAmusementStageDataOrBuilder
+            public boolean getIsOpen() {
+                return this.isOpen_;
+            }
+
+            public Builder setIsOpen(boolean value) {
+                this.isOpen_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearIsOpen() {
+                this.isOpen_ = false;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.CharAmusementStageDataOuterClass.CharAmusementStageDataOrBuilder
+            public int getStageId() {
+                return this.stageId_;
+            }
+
+            public Builder setStageId(int value) {
+                this.stageId_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearStageId() {
+                this.stageId_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
+            public final Builder setUnknownFields(UnknownFieldSet unknownFields) {
+                return setUnknownFields(unknownFields);
+            }
+
+            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
+            public final Builder mergeUnknownFields(UnknownFieldSet unknownFields) {
+                return mergeUnknownFields(unknownFields);
+            }
+        }
+
+        public static CharAmusementStageData getDefaultInstance() {
+            return DEFAULT_INSTANCE;
+        }
+
+        public static Parser<CharAmusementStageData> parser() {
+            return PARSER;
+        }
+
+        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageLite, com.google.protobuf.Message
+        public Parser<CharAmusementStageData> getParserForType() {
+            return PARSER;
+        }
+
+        @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
+        public CharAmusementStageData getDefaultInstanceForType() {
+            return DEFAULT_INSTANCE;
+        }
+    }
+
+    public static Descriptors.FileDescriptor getDescriptor() {
+        return descriptor;
+    }
+}

@@ -1,0 +1,435 @@
+{
+  "messages": {
+    "game": {
+      "address_bind": "Server Game dimulai pada \u001b[1m\u001b[33m%s:%s\u001b[0m",
+      "port_bind": "Server Game dimulai pada port %s",
+      "connect": "Klien terhubung dari %s",
+      "disconnect": "Klien terputus dari %s",
+      "game_update_error": "Terjadi kesalahan selama pembaruan game.",
+      "command_error": "Kesalahan perintah:",
+      "info": "Silakan cek ps.yuuki.me untuk info lebih lanjut",
+      "update": "Versi server adalah %s\nVersi Anda saat ini adalah %s \n\nPerbarui klien game Anda dari server resmi dengan mematikan proxy atau unduh klien terbaru dari ps.yuuki.me",
+      "error_404": "Jika Anda melihat pesan ini, itu berarti Anda sedang terhubung ke server pribadi. untuk mendownload data game atau yang lainnya silahkan matikan proxy terlebih dahulu."
+    },
+    "dispatch": {
+      "address_bind": "[Dispatch] Server pengiriman dimulai pada \u001b[1m\u001b[33m%s:%s\u001b[0m",
+      "port_bind": "[Dispatch] Server pengiriman dimulai pada port %s",
+      "request": "[Dispatch] Klien %s %s meminta: %s",
+      "keystore": {
+        "general_error": "[Dispatch] Kesalahan saat memuat keystore!",
+        "password_error": "[Dispatch] Tidak dapat memuat keystore. Mencoba kata sandi keystore default...",
+        "no_keystore_error": "[Dispatch] Tidak ada sertifikat SSL yang ditemukan! Kembali ke server HTTP.",
+        "default_password": "[Dispatch] Kata sandi keystore default berhasil dimuat. Harap pertimbangkan untuk menyetel kata sandi ke 123456 di config.json."
+      },
+      "authentication": {
+        "default_unable_to_verify": "[Authentication] Sesuatu yang disebut metode verifikasiUser yang tidak tersedia di pengendali otentikasi default"
+      },
+      "no_commands_error": "Perintah tidak didukung dalam mode pengiriman saja.",
+      "unhandled_request_error": "[Dispatch] Potensi tidak tertangani %s meminta: %s",
+      "account": {
+        "login_attempt": "[Dispatch] Klien %s mencoba masuk.",
+        "login_success": "[Dispatch] Klien %s login sebagai %s.",
+        "login_max_player_limit": "[Dispatch] Klien %s gagal masuk: Jumlah pemain online telah mencapai batas",
+        "login_token_attempt": "[Dispatch] Klien %s mencoba masuk melalui token.",
+        "login_token_error": "[Dispatch] Klien %s gagal masuk melalui token.",
+        "login_token_success": "[Dispatch] Klien %s masuk melalui token sebagai %s.",
+        "login_password_error": "[Dispatch] Klien %s gagal masuk melalui kata sandi.",
+        "login_password_storage_error": "[Dispatch] Klien %s gagal masuk melalui kata sandi karena tidak ada kata sandi dalam database.",
+        "combo_token_success": "[Dispatch] Klien %s berhasil menukarkan token kombo.",
+        "combo_token_error": "[Dispatch] Klien %s gagal menukar token kombo.",
+        "account_login_create_success": "[Dispatch] Klien %s gagal masuk: Akun %s dibuat.",
+        "account_login_create_error": "[Dispatch] Klien %s gagal masuk: Pembuatan akun gagal.",
+        "account_login_exist_error": "[Dispatch] Klien %s gagal masuk: Akun tidak ditemukan.",
+        "account_cache_error": "Kesalahan informasi cache akun game.",
+        "session_key_error": "Kunci sesi salah.",
+        "username_error": "Nama pengguna tidak ditemukan.",
+        "username_create_error": "Nama pengguna tidak ditemukan, pembuatan gagal.",
+        "password_error": "kata sandi salah",
+        "password_error_2": "Gagal membuat kata sandi, silakan periksa discord.yuuki.me untuk info lebih lanjut",
+        "password_error_3": "Mungkin metadata yang Anda masukkan salah, silakan periksa discord.yuuki.me untuk info lebih lanjut",
+        "password_length_error": "Panjang kata sandi harus lebih besar dari atau sama dengan 8",
+        "password_storage_error": "Anda tidak memiliki kata sandi untuk akun Anda. Silakan hubungi administrator.",
+        "server_max_player_limit": "Jumlah pemain online telah mencapai batas"
+      },
+      "router_error": "[Dispatch] Tidak dapat memasang perute."
+    },
+    "status": {
+      "free_software": "Grasscutter adalah perangkat lunak GRATIS. Jika Anda telah membayar anda mungkin telah kena scammed. Link: https://github.com/Grasscutters/Grasscutter",
+      "starting": "Memulai Grasscutter...",
+      "shutdown": "Mematikan...",
+      "done": "Selesai! Untuk bantuan, ketik \"help\"",
+      "error": "Terjadi kesalahan.",
+      "welcome": "Selamat datang di Grasscutter",
+      "run_mode_error": "Mode menjalankan server tidak valid: %s.",
+      "run_mode_help": "Mode server harus dengan 'HYBRID', 'DISPATCH_ONLY', atau 'GAME_ONLY'. Tidak dapat memulai Grasscutter...",
+      "create_resources": "Membuat folder sumber daya...",
+      "resources_error": "Tempatkan salinan 'BinOutput' dan 'ExcelBinOutput' di folder sumber daya.",
+      "version": "Grasscutter versi: %s-%s",
+      "game_version": "Game versi: %s",
+      "resources": {
+        "loading": "Memuat sumber daya...",
+        "finish": "Selesai memuat sumber daya."
+      }
+    }
+  },
+  "commands": {
+    "generic": {
+      "ratelimit": "Harap tunggu lagi setelah %s detik",
+      "not_specified": "Tidak ada perintah yang ditentukan.",
+      "unknown_command": "Perintah tidak diketahui: %s",
+      "permission_error": "Anda tidak memiliki izin untuk menjalankan perintah ini.",
+      "console_execute_error": "Perintah ini hanya dapat dijalankan dari konsol.",
+      "player_execute_error": "Jalankan perintah ini dalam game.",
+      "command_exist_error": "Tidak ada perintah yang ditemukan.",
+      "no_usage_specified": "Tidak ada penggunaan yang ditentukan",
+      "no_description_specified": "Tidak ada deskripsi yang ditentukan",
+      "set_to": "%s mulai atur %s.",
+      "set_for_to": "%s untuk %s di atur dari %s.",
+      "invalid": {
+        "amount": "Jumlah tidak valid.",
+        "artifactId": "tidak valid artifactId.",
+        "avatarId": "tidak valid avatarId.",
+        "avatarLevel": "tidak valid avatarLevel.",
+        "entityId": "tidak valid entityId.",
+        "itemId": "tidak valid itemId.",
+        "itemLevel": "tidak valid itemLevel.",
+        "itemRefinement": "tidak valid itemRefinement.",
+        "statValue": "Nilai statistik tidak valid.",
+        "value_between": "Nilai tidak valid: %s harus antara %s dan %s.",
+        "playerId": "tidak valid playerId.",
+        "uid": "UID tidak cocok",
+        "id": "ID tidak cocok"
+      }
+    },
+    "execution": {
+      "usage_prefix": "Pengguna: ",
+      "player_exist_error": "Pemain tidak ditemukan.",
+      "player_offline_error": "Pemain tidak online.",
+      "item_player_exist_error": "tidak valid item atau UID.",
+      "player_exist_offline_error": "Pemain tidak ditemukan atau tidak online.",
+      "argument_error": "Tidak valid argumen.",
+      "clear_target": "Target dibersihkan.",
+      "set_target": "Perintah selanjutnya akan menargetkan @%s secara bawaan.",
+      "set_target_online": "@%s sedang online. Beberapa perintah mungkin memerlukan target offline.",
+      "set_target_offline": "@%s sedang offline. Beberapa perintah mungkin memerlukan target online.",
+      "need_target": "Perintah ini membutuhkan UID target. Tambahkan argumen <@UID> atau tetapkan target tetap dengan /target @UID.",
+      "need_target_online": "Perintah ini memerlukan UID target online, tetapi target saat ini offline. Tambahkan argumen <@UID> yang berbeda atau tetapkan target tetap dengan /target @UID.",
+      "need_target_offline": "Perintah ini memerlukan UID target offline, tetapi target saat ini sedang online. Tambahkan argumen <@UID> yang berbeda atau tetapkan target tetap dengan /target @UID."
+    },
+    "status": {
+      "enabled": "Diaktifkan",
+      "disabled": "Dimatikan",
+      "help": "Bantuan",
+      "success": "Sukses"
+    },
+    "account": {
+      "invalid": "tidak valid UID.",
+      "exists": "Akun sudah ada.",
+      "create": "Akun dibuat dengan UID %s.",
+      "delete": "Akun dihapus.",
+      "no_account": "Akun tidak ditemukan.",
+      "description": "Ubah akun pengguna"
+    },
+    "announce": {
+      "send_success": "Kirim pengumuman berhasil, Anda dapat mencabutnya dengan /a revoke %s.",
+      "refresh_success": "Refresh file konfigurasi pengumuman berhasil. (Jumlah %s)",
+      "revoke_done": "Selesai cabut pengumuman %s.",
+      "not_found": "Tidak dapat menemukan pengumuman %s.",
+      "description": "Kirim pengumuman ke semua pemain online, atau kelola pengumuman server."
+    },
+    "clear": {
+      "weapons": "Senjata dibersihkan untuk %s.",
+      "artifacts": "Artefak yang dihapus untuk %s.",
+      "materials": "Bahan yang dibersihkan untuk %s.",
+      "furniture": "Membersihkan furnitur untuk %s.",
+      "displays": "Tampilan yang dihapus untuk %s.",
+      "virtuals": "Menghapus virtual untuk %s.",
+      "done": "Menghapus %s item dengan batas %s",
+      "everything": "Menghapus semuanya untuk %s.",
+      "description": "Menghapus item yang tidak terkunci, termasuk item langka berwarna kuning dari inventaris Anda"
+    },
+    "coop": {
+      "success": "Dipanggil %s ke %s dunianya.",
+      "description": "Memaksa seseorang untuk bergabung dengan dunia orang lain"
+    },
+    "enter_dungeon": {
+      "changed": "Berpindah ke dungeon %s",
+      "not_found_error": "Tidak ada Dungeon ditemukan",
+      "in_dungeon_error": "Anda sudah berada di Dungeon itu",
+      "description": "Masuk ke dungeon"
+    },
+    "give": {
+      "usage_relic": "Penggunaan: give <artifactID> [mainPropID] [<appendPropID>[,<times>]]... [lv<level 0-20>]",
+      "illegal_relic": "ArtifactID ini termasuk dalam daftar hitam, mungkin bukan yang Anda inginkan.",
+      "given": "Diberikan %s dari %s ke %s.",
+      "given_with_level_and_refinement": "Diberikan %s dengan level %s, refinement %s %s sebanyak ke %s.",
+      "given_level": "Diberikan %s dengan level %s %s sebanyak ke %s.",
+      "given_avatar": "Diberikan %s dengan level %s ke %s.",
+      "giveall_success": "Berhasil memberikan semua item.",
+      "description": "Memberikan item kepada kamu atau pemain yang ditentukan. Dapat juga memberikan semua senjata, avatar, dan/atau material, dan dapat membuat artefak khusus."
+    },
+    "heal": {
+      "success": "Semua karakter telah disembuhkan.",
+      "description": "Sembuhkan semua karakter di tim Anda saat ini."
+    },
+    "help": {
+      "aliases": "Alias: ",
+      "available_commands": "Perintah yang tersedia: ",
+      "tip_need_permission": "Izin: ",
+      "tip_need_no_permission": " Tidak ada",
+      "tip_permission_targeted": " (Izin %s juga diperlukan untuk digunakan pada pemain lain)",
+      "warn_player_has_no_permission": "Pemberitahuan: kamu tidak memiliki izin untuk menjalankan perintah ini.",
+      "description": "Mengirim pesan bantuan atau menampilkan informasi tentang perintah tertentu"
+    },
+    "kick": {
+      "player_kick_player": "Pemain [%s:%s] telah menendang pemain [%s:%s]",
+      "server_kick_player": "Menendang pemain [%s:%s]",
+      "description": "Menendang pemain tertentu dari server (WIP)"
+    },
+    "killall": {
+      "scene_not_found_in_player_world": "Adegan tidak ditemukan di dunia pemain",
+      "kill_monsters_in_scene": "Membunuh %s monster di adegan %s",
+      "description": "Bunuh semua monster"
+    },
+    "killCharacter": {
+      "success": "Membunuh karakter %s saat ini.",
+      "description": "Membunuh karakter pemain saat ini"
+    },
+    "language": {
+      "current_language": "bahasa saat ini adalah %s",
+      "language_changed": "bahasa diubah menjadi %s",
+      "language_not_found": "saat ini, server tidak memiliki bahasa itu: %s",
+      "description": "menampilkan atau mengubah bahasa saat ini"
+    },
+    "list": {
+      "success": "Saat ini ada %s pemain yang online",
+      "description": "Daftar pemain online"
+    },
+    "permission": {
+      "add": "Izin ditambahkan.",
+      "has_error": "Mereka sudah memiliki izin ini!",
+      "remove": "Izin dihapus.",
+      "not_have_error": "Mereka tidak memiliki izin ini!",
+      "account_error": "Akun tidak dapat ditemukan.",
+      "description": "Memberikan atau menghapus izin untuk pengguna"
+    },
+    "position": {
+      "success": "Koordinat: %s, %s, %s\nRotasi：%s, %s, %s\nID Pemandangan: %s",
+      "description": "Mendapatkan informasi posisi dan rotasi"
+    },
+    "quest": {
+      "added": "Misi %s telah ditambahkan",
+      "finished": "Misi selesai %s",
+      "not_found": "ID Misi tidak ditemukan",
+      "invalid_id": "Tidak sah Misi ID nya",
+      "description": "Tambahkan atau selesaikan misi"
+    },
+    "reload": {
+      "reload_start": "Memuat ulang konfigurasi",
+      "reload_done": "Memuat ulang selesai.",
+      "description": "Muat ulang konfigurasi server"
+    },
+    "resetConst": {
+      "reset_all": "Setel ulang konstelasi semua avatar.",
+      "success": "Konstelasi untuk %s telah disetel ulang. Harap login kembali untuk melihat perubahan.",
+      "description": "Mengatur ulang tingkat konstelasi pada karakter aktif Anda saat ini, perlu melakukan relog setelah menggunakan perintah untuk melihat perubahan apa pun."
+    },
+    "resetShopLimit": {
+      "success": "Setel ulang selesai.",
+      "description": "Setel ulang waktu penyegaran toko pemain."
+    },
+    "sendMail": {
+      "give_usage": "Penggunaan: give <player> <itemID|itemName> [jumlah] [level] [perbaikan]",
+      "user_not_exist": "Pengguna dengan id dari '%s' tidak ada",
+      "start_composition": "Memulai komposisi pesan.\nSilakan gunakan `/sendmail <title>` untuk melanjutkan.\nAnda dapat menggunakan `/sendmail stop` kapan saja",
+      "templates": "Template email segera hadir diimplementasikan.",
+      "invalid_arguments": "Invalid arguments.\nUsage `/sendmail <userId|all|help> [templateId]`",
+      "send_cancel": "Message sending cancelled",
+      "send_done": "Pesan dikirim ke pengguna %s!",
+      "send_all_done": "Pesan dikirim ke semua pengguna!",
+      "not_composition_end": "Message composition not at final stage.\nPlease use `/sendmail %s` or `/sendmail stop` to cancel",
+      "please_use": "Please use `/sendmail %s`",
+      "set_title": "Judul pesan ditetapkan sebagai '%s'.\nGunakan '/sendmail <content>' untuk melanjutkan.",
+      "set_contents": "Isi pesan ditetapkan sebagai '%s'.\nGunakan '/sendmail <sender>' untuk melanjutkan.",
+      "set_message_sender": "Message sender set as '%s'.\nUse '/sendmail <itemId|itemName|finish> [amount] [level]' to continue.",
+      "send": "Attached %s of %s (level %s) to the message.\nContinue adding more items or use `/sendmail finish` to send the message.",
+      "invalid_arguments_please_use": "Invalid arguments \n Please use `/sendmail %s`",
+      "title": "<judul>",
+      "message": "<pesan>",
+      "sender": "<pengirim>",
+      "arguments": "<itemId|itemName|finish> [amount] [level]",
+      "error": "ERROR: invalid construction stage %s. Check console for stacktrace.",
+      "description": "Sends mail to the specified user. The usage of this command changes based on it's composition state."
+    },
+    "sendMessage": {
+      "success": "Pesan terkirim.",
+      "description": "Mengirim pesan ke pemain sebagai server. Jika digunakan tanpa target, kirim ke semua pemain di server."
+    },
+    "setConst": {
+      "range_error": "Tingkat konstelasi harus antara 0 dan 6.",
+      "level_error": "Tingkat konstelasi tidak valid.",
+      "fail": "Gagal menyetel konstelasi.",
+      "failed_success": "Konstelasi untuk %s telah disetel ke %s. Harap muat ulang adegan untuk melihat perubahan.",
+      "success": "Konstelasi untuk %s telah disetel ke %s.",
+      "successall": "Konstelasi untuk semua karakter telah disetel ke %s.",
+      "description": "Mengatur tingkat konstelasi untuk karakter aktif Anda saat ini"
+    },
+    "setFetterLevel": {
+      "range_error": "Level teman harus antara 0 dan 10.",
+      "success": "Teman level telah di atur ke %s",
+      "level_error": "Level teman tidak vaild",
+      "description": "Tetapkan level teman mu untuk karakter aktif anda saat ini"
+    },
+    "setProp": {
+      "description": "Menetapkan properti seluruh akun. Hal-hal seperti mode dewa dapat diaktifkan dengan cara ini, serta mengubah hal-hal seperti lantai jurang yang tidak terkunci dan kemajuan pertempuran."
+    },
+    "setStats": {
+      "description": "Tetapkan properti pertarungan untuk karakter aktif anda saat ini",
+      "locked_to": "%s terkunci ke %s.",
+      "locked_for_to": "%s untuk %s terkunci ke %s.",
+      "unlocked": "%s tidak terkunci.",
+      "unlocked_for": "%s untuk %s tidak terkunci."
+    },
+    "spawn": {
+      "success": "Muncul %s dari %s.",
+      "limit_reached": "Batas spawn di adegan ini telah tercapai. batas saat ini %s",
+      "description": "Memunculkan entitas di dekat mu"
+    },
+    "stop": {
+      "success": "Server dimatikan...",
+      "description": "Menghentikan server"
+    },
+    "talent": {
+      "out_of_range": "Tingkat bakat tidak valid. Level harus dalam kisaran 1-15.",
+      "set_id": "Tetapkan bakat untuk %s.",
+      "id_desc": "🇺🇸Talent %s - \"%s\" - \"%s\"",
+      "invalid_skill_id": "ID keterampilan tidak valid.",
+      "invalid_level": "Tingkat bakat yang tidak valid.",
+      "normal_attack_id": "Serangan Biasa ID %s.",
+      "e_skill_id": "E keterampilan ID %s.",
+      "q_skill_id": "Q keterampilan ID %s.",
+      "description": "Tetapkan level bakat untuk karakter aktif Anda saat ini"
+    },
+    "team": {
+      "invalid_usage": "Penggunaan tidak valid.",
+      "invalid_index": "Index tidak sah",
+      "add_too_much": "Server hanya mengizinkan kamu untuk memiliki paling banyak %d avatar di tim mu.",
+      "failed_to_add_avatar": "Gagal menambahkan avatar ID %s.",
+      "failed_to_parse_index": "Gagal mem-parsing index: %s",
+      "remove_too_much": "Kamu tidak dapat menghapus semua avatar mu.",
+      "ignore_index": "Abaikan index(es): %s",
+      "index_out_of_range": "Indeks yang Anda tentukan berada di luar jangkauan.",
+      "failed_parse_avatar_id": "Gagal mem-parsing ID avatar: %s",
+      "avatar_already_in_team": "Avatar ini sudah ada di tim mu.",
+      "avatar_not_found": "Avatar %d tidak ditemukan.",
+      "description": "Ubah tim Anda secara manual."
+    },
+    "teleportAll": {
+      "success": "Memanggil semua pemain ke lokasi Anda.",
+      "error": "Anda hanya dapat menggunakan perintah ini dalam mode MP.",
+      "description": "Teleport semua pemain di dunia Anda ke posisi Anda"
+    },
+    "teleport": {
+      "invalid_position": "Salah posisi",
+      "exists_error": "Adegan yang ditentukan tidak ada.",
+      "success": "Teleportasi %s ke %s, %s, %s dalam adegan %s",
+      "description": "Ubah posisi pemain."
+    },
+    "weather": {
+      "success": "Ubah cuaca ke %s dengan suasana %s",
+      "status": "ID cuaca saat ini adalah %s dengan tipe iklim %s.",
+      "description": "Ubah cuaca"
+    },
+    "equip": {
+      "description": "(WIP) Kamu dapat mengganti senjata karakter saat ini dengan senjata yang tidak dapat digunakan oleh karakter saat ini karena berbeda jenis senjata."
+    },
+    "remote": {
+      "description": "Gunakan ini untuk mengakses perintah dari web"
+    },
+    "enka": {
+      "description": "(NEW) Salin data karakter mu dari server resmi ke server pribadi menggunakan layanan Enka.Network (data diambil hanya dari Showcase)",
+      "start": "Memberikan karakter, artefak, dan senjata...",
+      "done": "Selesai menyalin data dari uid: %s nama panggilan : %s",
+      "error": "Kesalahan saat memuat data! Pastikan uid/nama benar dan profil kalian bersifat publik.",
+      "usage": "🇺🇸/enka <uid>"
+    },
+    "ban": {
+      "success": "Berhasil.",
+      "failure": "Gagal, pemain tidak ditemukan.",
+      "invalid_time": "Tidak dapat menguraikan stempel waktu.",
+      "description": "Larangan seorang pemain"
+    },
+    "unlockall": {
+      "success": "Membuka semua status terbuka selama %s.",
+      "description": "Membuka semua status terbuka untuk pemain."
+    },
+    "unban": {
+      "success": "Berhasil.",
+      "failure": "Gagal, pemain tidak ditemukan.",
+      "description": "Batalkan larangan pemain"
+    }
+  },
+  "gacha": {
+    "details": {
+      "title": "Detail Banner",
+      "available_five_stars": "Item bintang 5 yang tersedia",
+      "available_four_stars": "Item bintang 4 yang tersedia",
+      "available_three_stars": "Item bintang 3 yang tersedia"
+    },
+    "records": {
+      "title": "Catatan Gacha",
+      "date": "Tanggal",
+      "item": "Barang"
+    }
+  },
+  "documentation": {
+    "handbook": {
+      "title": "Buku",
+      "title_commands": "Perintah",
+      "title_avatars": "Avatar",
+      "title_items": "Item",
+      "title_scenes": "Adegan",
+      "title_monsters": "Raksasa",
+      "header_id": "Nomor",
+      "header_command": "Perintah",
+      "header_description": "Keterangan",
+      "header_avatar": "🇺🇸Avatar",
+      "header_item": "Barang",
+      "header_scene": "Adegan",
+      "header_monster": "Raksasa"
+    },
+    "index": {
+      "title": "Dokumentasi",
+      "handbook": "Buku",
+      "gacha_mapping": "Pemetaan gacha ke JSON"
+    }
+  },
+  "plugin": {
+    "directory_failed": "Gagal membuat direktori plugin: ",
+    "unable_to_load": "Tidak dapat memuat plugin.",
+    "invalid_config": "Plugin %s memiliki file konfigurasi yang tidak valid.",
+    "invalid_main_class": "Plugin %s memiliki kelas utama yang tidak valid.",
+    "missing_config": "Plugin %s tidak memiliki file konfigurasi yang valid.",
+    "failed_to_load_plugin": "Gagal memuat plugin: %s",
+    "failed_to_load": "Gagal memuat plugin.",
+    "failed_to_load_dependencies": "Gagal memuat plugin dengan dependensi.",
+    "loading_plugin": "Memuat plugin: %s",
+    "failed_add_id": "Gagal menambahkan pengenal plugin: %s",
+    "enabling_plugin": "Mengaktifkan plugin: %s",
+    "enabling_failed": "Gagal mengaktifkan plugin: %s",
+    "disabling_plugin": "Menonaktifkan plugin: %s",
+    "disabling_failed": "Gagal menonaktifkan plugin: %s"
+  },
+  "dockergs": {
+    "account": {
+      "username_vaild": "Gunakan Nama Pengguna tanpa spasi dan huruf khusus atau format email saja"
+    },
+    "commands": {
+      "clear": {
+        "done": "Kami telah menghapus %s item dari akun mu (limit setiap %s item)"
+      },
+      "limit": "Perintah ini dibatasi hanya untuk %s Entitas, Saat ini ada %s Entitas dalam adegan ini",
+      "limit2": "Perintah ini dibatasi hanya untuk setiap %s jumlahnya."
+    }
+  }
+}

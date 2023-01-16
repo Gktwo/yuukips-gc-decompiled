@@ -1,0 +1,194 @@
+package com.mchange.p009v2.c3p0;
+
+import java.sql.SQLException;
+import java.util.Collection;
+import java.util.Map;
+import javax.sql.DataSource;
+
+/* renamed from: com.mchange.v2.c3p0.PooledDataSource */
+/* loaded from: grasscutter.jar:com/mchange/v2/c3p0/PooledDataSource.class */
+public interface PooledDataSource extends DataSource {
+    String getIdentityToken();
+
+    String getDataSourceName();
+
+    void setDataSourceName(String str);
+
+    Map getExtensions();
+
+    void setExtensions(Map map);
+
+    int getNumConnections() throws SQLException;
+
+    int getNumIdleConnections() throws SQLException;
+
+    int getNumBusyConnections() throws SQLException;
+
+    int getNumUnclosedOrphanedConnections() throws SQLException;
+
+    int getNumConnectionsDefaultUser() throws SQLException;
+
+    int getNumIdleConnectionsDefaultUser() throws SQLException;
+
+    int getNumBusyConnectionsDefaultUser() throws SQLException;
+
+    int getNumUnclosedOrphanedConnectionsDefaultUser() throws SQLException;
+
+    int getStatementCacheNumStatementsDefaultUser() throws SQLException;
+
+    int getStatementCacheNumCheckedOutDefaultUser() throws SQLException;
+
+    int getStatementCacheNumConnectionsWithCachedStatementsDefaultUser() throws SQLException;
+
+    long getStartTimeMillisDefaultUser() throws SQLException;
+
+    long getUpTimeMillisDefaultUser() throws SQLException;
+
+    long getNumFailedCheckinsDefaultUser() throws SQLException;
+
+    long getNumFailedCheckoutsDefaultUser() throws SQLException;
+
+    long getNumFailedIdleTestsDefaultUser() throws SQLException;
+
+    float getEffectivePropertyCycleDefaultUser() throws SQLException;
+
+    int getNumThreadsAwaitingCheckoutDefaultUser() throws SQLException;
+
+    void softResetDefaultUser() throws SQLException;
+
+    int getNumConnections(String str, String str2) throws SQLException;
+
+    int getNumIdleConnections(String str, String str2) throws SQLException;
+
+    int getNumBusyConnections(String str, String str2) throws SQLException;
+
+    int getNumUnclosedOrphanedConnections(String str, String str2) throws SQLException;
+
+    int getStatementCacheNumStatements(String str, String str2) throws SQLException;
+
+    int getStatementCacheNumCheckedOut(String str, String str2) throws SQLException;
+
+    int getStatementCacheNumConnectionsWithCachedStatements(String str, String str2) throws SQLException;
+
+    float getEffectivePropertyCycle(String str, String str2) throws SQLException;
+
+    int getNumThreadsAwaitingCheckout(String str, String str2) throws SQLException;
+
+    void softReset(String str, String str2) throws SQLException;
+
+    int getNumBusyConnectionsAllUsers() throws SQLException;
+
+    int getNumIdleConnectionsAllUsers() throws SQLException;
+
+    int getNumConnectionsAllUsers() throws SQLException;
+
+    int getNumUnclosedOrphanedConnectionsAllUsers() throws SQLException;
+
+    int getStatementCacheNumStatementsAllUsers() throws SQLException;
+
+    int getStatementCacheNumCheckedOutStatementsAllUsers() throws SQLException;
+
+    int getStatementCacheNumConnectionsWithCachedStatementsAllUsers() throws SQLException;
+
+    int getStatementDestroyerNumConnectionsInUseAllUsers() throws SQLException;
+
+    /* renamed from: getStatementDestroyerNumConnectionsWithDeferredDestroyStatementsAllUsers */
+    int mo1285x7f0e7943() throws SQLException;
+
+    int getStatementDestroyerNumDeferredDestroyStatementsAllUsers() throws SQLException;
+
+    int getThreadPoolSize() throws SQLException;
+
+    int getThreadPoolNumActiveThreads() throws SQLException;
+
+    int getThreadPoolNumIdleThreads() throws SQLException;
+
+    int getThreadPoolNumTasksPending() throws SQLException;
+
+    int getStatementDestroyerNumThreads() throws SQLException;
+
+    int getStatementDestroyerNumActiveThreads() throws SQLException;
+
+    int getStatementDestroyerNumIdleThreads() throws SQLException;
+
+    int getStatementDestroyerNumTasksPending() throws SQLException;
+
+    String sampleThreadPoolStackTraces() throws SQLException;
+
+    String sampleThreadPoolStatus() throws SQLException;
+
+    String sampleStatementDestroyerStackTraces() throws SQLException;
+
+    String sampleStatementDestroyerStatus() throws SQLException;
+
+    String sampleStatementCacheStatusDefaultUser() throws SQLException;
+
+    String sampleStatementCacheStatus(String str, String str2) throws SQLException;
+
+    Throwable getLastAcquisitionFailureDefaultUser() throws SQLException;
+
+    Throwable getLastCheckinFailureDefaultUser() throws SQLException;
+
+    Throwable getLastCheckoutFailureDefaultUser() throws SQLException;
+
+    Throwable getLastIdleTestFailureDefaultUser() throws SQLException;
+
+    Throwable getLastConnectionTestFailureDefaultUser() throws SQLException;
+
+    int getStatementDestroyerNumConnectionsInUseDefaultUser() throws SQLException;
+
+    /* renamed from: getStatementDestroyerNumConnectionsWithDeferredDestroyStatementsDefaultUser */
+    int mo1284xa0bf87d0() throws SQLException;
+
+    int getStatementDestroyerNumDeferredDestroyStatementsDefaultUser() throws SQLException;
+
+    Throwable getLastAcquisitionFailure(String str, String str2) throws SQLException;
+
+    Throwable getLastCheckinFailure(String str, String str2) throws SQLException;
+
+    Throwable getLastCheckoutFailure(String str, String str2) throws SQLException;
+
+    Throwable getLastIdleTestFailure(String str, String str2) throws SQLException;
+
+    Throwable getLastConnectionTestFailure(String str, String str2) throws SQLException;
+
+    int getStatementDestroyerNumConnectionsInUse(String str, String str2) throws SQLException;
+
+    int getStatementDestroyerNumConnectionsWithDeferredDestroyStatements(String str, String str2) throws SQLException;
+
+    int getStatementDestroyerNumDeferredDestroyStatements(String str, String str2) throws SQLException;
+
+    String sampleLastAcquisitionFailureStackTraceDefaultUser() throws SQLException;
+
+    String sampleLastCheckinFailureStackTraceDefaultUser() throws SQLException;
+
+    String sampleLastCheckoutFailureStackTraceDefaultUser() throws SQLException;
+
+    String sampleLastIdleTestFailureStackTraceDefaultUser() throws SQLException;
+
+    String sampleLastConnectionTestFailureStackTraceDefaultUser() throws SQLException;
+
+    String sampleLastAcquisitionFailureStackTrace(String str, String str2) throws SQLException;
+
+    String sampleLastCheckinFailureStackTrace(String str, String str2) throws SQLException;
+
+    String sampleLastCheckoutFailureStackTrace(String str, String str2) throws SQLException;
+
+    String sampleLastIdleTestFailureStackTrace(String str, String str2) throws SQLException;
+
+    String sampleLastConnectionTestFailureStackTrace(String str, String str2) throws SQLException;
+
+    void softResetAllUsers() throws SQLException;
+
+    int getNumUserPools() throws SQLException;
+
+    int getNumHelperThreads() throws SQLException;
+
+    Collection getAllUsers() throws SQLException;
+
+    void hardReset() throws SQLException;
+
+    void close() throws SQLException;
+
+    void close(boolean z) throws SQLException;
+}

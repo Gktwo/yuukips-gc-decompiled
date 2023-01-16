@@ -1,0 +1,24 @@
+package p001ch.qos.logback.classic.pattern;
+
+import java.util.HashMap;
+import java.util.Map;
+import org.slf4j.Marker;
+import p001ch.qos.logback.classic.spi.ClassPackagingData;
+
+/* renamed from: ch.qos.logback.classic.pattern.Util */
+/* loaded from: grasscutter.jar:ch/qos/logback/classic/pattern/Util.class */
+public class Util {
+    static Map<String, ClassPackagingData> cache = new HashMap();
+
+    public static boolean match(Marker marker, Marker[] markerArray) {
+        if (markerArray == null) {
+            throw new IllegalArgumentException("markerArray should not be null");
+        }
+        for (Marker marker2 : markerArray) {
+            if (marker.contains(marker2)) {
+                return true;
+            }
+        }
+        return false;
+    }
+}
