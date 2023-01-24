@@ -519,7 +519,7 @@ public final class FloatBigListIterators {
 
         /* JADX DEBUG: Multi-variable search result rejected for r8v0, resolved type: it.unimi.dsi.fastutil.floats.FloatBigListIterators$AbstractIndexBasedBigListIterator */
         /* JADX WARN: Multi-variable type inference failed */
-        /* JADX WARN: Type inference failed for: r3v2, types: [it.unimi.dsi.fastutil.floats.FloatBigListIterators$AbstractIndexBasedBigListIterator, long] */
+        /* JADX WARN: Type inference failed for: r3v2, types: [long, it.unimi.dsi.fastutil.floats.FloatBigListIterators$AbstractIndexBasedBigListIterator] */
         /* JADX WARNING: Unknown variable types count: 1 */
         @Override // p014it.unimi.dsi.fastutil.floats.FloatBidirectionalIterator
         /* Code decompiled incorrectly, please refer to instructions dump. */

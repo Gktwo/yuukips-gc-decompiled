@@ -4,10 +4,9 @@ import dev.morphia.mapping.Mapper;
 import dev.morphia.mapping.codec.pojo.EntityModel;
 import java.util.Map;
 
-/* access modifiers changed from: package-private */
 @Deprecated(since = "2.0", forRemoval = true)
 /* loaded from: grasscutter.jar:dev/morphia/query/Geo2dCriteria.class */
-public class Geo2dCriteria extends FieldCriteria {
+class Geo2dCriteria extends FieldCriteria {
     private final Map<String, Object> opts;
 
     /*  JADX ERROR: Dependency scan failed at insn: 0x0089: INVOKE_CUSTOM r-4

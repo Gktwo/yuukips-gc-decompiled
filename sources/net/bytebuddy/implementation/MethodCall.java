@@ -611,8 +611,9 @@ public class MethodCall implements Implementation.Composable {
                 throw new IllegalStateException("Cannot assign " + parameterDescription + " to " + target + " for " + this.instrumentedMethod);
             }
 
+            /* access modifiers changed from: protected */
             /* loaded from: grasscutter.jar:net/bytebuddy/implementation/MethodCall$ArgumentLoader$ForMethodParameter$OfInstrumentedMethod.class */
-            protected enum OfInstrumentedMethod implements Factory, ArgumentProvider {
+            public enum OfInstrumentedMethod implements Factory, ArgumentProvider {
                 INSTANCE;
 
                 @Override // net.bytebuddy.dynamic.scaffold.InstrumentedType.Prepareable

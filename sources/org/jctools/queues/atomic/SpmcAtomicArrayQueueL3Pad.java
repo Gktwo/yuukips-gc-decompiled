@@ -1,9 +1,8 @@
 package org.jctools.queues.atomic;
 
 /* compiled from: SpmcAtomicArrayQueue.java */
-/* access modifiers changed from: package-private */
 /* loaded from: grasscutter.jar:org/jctools/queues/atomic/SpmcAtomicArrayQueueL3Pad.class */
-public abstract class SpmcAtomicArrayQueueL3Pad<E> extends SpmcAtomicArrayQueueProducerIndexCacheField<E> {
+abstract class SpmcAtomicArrayQueueL3Pad<E> extends SpmcAtomicArrayQueueProducerIndexCacheField<E> {
     byte b000;
     byte b001;
     byte b002;

@@ -6,9 +6,10 @@ import p013io.netty.util.concurrent.Future;
 import p013io.netty.util.concurrent.GenericFutureListener;
 import p013io.netty.util.internal.ObjectUtil;
 
+/* access modifiers changed from: package-private */
 /* renamed from: io.netty.channel.CompleteChannelFuture */
 /* loaded from: grasscutter.jar:io/netty/channel/CompleteChannelFuture.class */
-abstract class CompleteChannelFuture extends CompleteFuture<Void> implements ChannelFuture {
+public abstract class CompleteChannelFuture extends CompleteFuture<Void> implements ChannelFuture {
     private final Channel channel;
 
     /* access modifiers changed from: protected */

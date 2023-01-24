@@ -8,8 +8,9 @@ import org.eclipse.jetty.util.resource.Resource;
 import org.eclipse.jetty.websocket.common.scopes.WebSocketContainerScope;
 import org.eclipse.jetty.xml.XmlConfiguration;
 
+/* access modifiers changed from: package-private */
 /* loaded from: grasscutter.jar:org/eclipse/jetty/websocket/client/XmlBasedHttpClientProvider.class */
-class XmlBasedHttpClientProvider {
+public class XmlBasedHttpClientProvider {
     public static final Logger LOG = Log.getLogger(XmlBasedHttpClientProvider.class);
 
     XmlBasedHttpClientProvider() {

@@ -2,8 +2,9 @@ package com.google.protobuf;
 
 import java.io.IOException;
 
+/* access modifiers changed from: package-private */
 /* loaded from: grasscutter.jar:com/google/protobuf/UnknownFieldSchema.class */
-abstract class UnknownFieldSchema<T, B> {
+public abstract class UnknownFieldSchema<T, B> {
     /* access modifiers changed from: package-private */
     public abstract boolean shouldDiscardUnknownFields(Reader reader);
 

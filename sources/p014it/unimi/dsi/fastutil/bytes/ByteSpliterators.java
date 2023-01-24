@@ -1060,9 +1060,10 @@ public final class ByteSpliterators {
         }
     }
 
+    /* access modifiers changed from: private */
     /* renamed from: it.unimi.dsi.fastutil.bytes.ByteSpliterators$SpliteratorFromIteratorWithComparator */
     /* loaded from: grasscutter.jar:it/unimi/dsi/fastutil/bytes/ByteSpliterators$SpliteratorFromIteratorWithComparator.class */
-    private static class SpliteratorFromIteratorWithComparator extends SpliteratorFromIterator {
+    public static class SpliteratorFromIteratorWithComparator extends SpliteratorFromIterator {
         private final ByteComparator comparator;
 
         SpliteratorFromIteratorWithComparator(ByteIterator iter, int additionalCharacteristics, ByteComparator comparator) {

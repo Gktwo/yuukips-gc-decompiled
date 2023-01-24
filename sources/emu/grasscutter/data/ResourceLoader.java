@@ -23,6 +23,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Stream;
@@ -941,6 +942,8 @@ public class ResourceLoader {
 
     private static void loadScenePoints() {
         Pattern pattern = Pattern.compile("scene([0-9]+)_point\\.json");
+        AtomicInteger goodpoint = new AtomicInteger(0);
+        AtomicInteger badpoint = new AtomicInteger(0);
         try {
             Files.newDirectoryStream(FileUtils.getResourcePath("BinOutput/Scene/Point"), "scene*_point.json").forEach(path -> {
                 Matcher matcher = pattern.matcher(path.getFileName().toString());
@@ -948,24 +951,33 @@ public class ResourceLoader {
                     int sceneId = Integer.parseInt(matcher.group(1));
                     try {
                         ScenePointConfig config = (ScenePointConfig) JsonUtils.loadToClass(path, ScenePointConfig.class);
-                        if (config.points != null) {
-                            IntArrayList scenePoints = new IntArrayList();
-                            config.points.forEach(pointId, pointData -> {
-                                ScenePointEntry scenePoint = new ScenePointEntry(sceneId, pointData);
-                                scenePoints.add(pointId);
-                                pointData.setId(pointId.intValue());
-                                GameData.getScenePointIdList().add(pointId);
-                                GameData.getScenePointEntries().put(scenePoint.getName(), scenePoint);
-                                GameData.scenePointEntryMap.put((sceneId << 16) + pointId.intValue(), (int) scenePoint);
-                                pointData.updateDailyDungeon();
-                            });
-                            GameData.getScenePointsPerScene().put(Integer.valueOf(sceneId), scenePoints);
+                        if (config.points == null) {
+                            badpoint.incrementAndGet();
+                            return;
                         }
+                        IntArrayList scenePoints = new IntArrayList();
+                        config.points.forEach(pointId, pointData -> {
+                            ScenePointEntry scenePoint = new ScenePointEntry(sceneId, pointData);
+                            if (pointData.getTranPos() != null) {
+                                goodpoint.incrementAndGet();
+                            } else {
+                                badpoint.incrementAndGet();
+                            }
+                            scenePoints.add(pointId);
+                            pointData.setId(pointId.intValue());
+                            GameData.getScenePointIdList().add(pointId);
+                            GameData.getScenePointEntries().put(scenePoint.getName(), scenePoint);
+                            GameData.scenePointEntryMap.put((sceneId << 16) + pointId.intValue(), (int) scenePoint);
+                            pointData.updateDailyDungeon();
+                        });
+                        GameData.getScenePointsPerScene().put(Integer.valueOf(sceneId), scenePoints);
                     } catch (Exception e) {
-                        e.printStackTrace();
+                        Grasscutter.getLogger().error("Scene point files {} error", path, e);
+                        goodpoint.incrementAndGet();
                     }
                 }
             });
+            Grasscutter.getLogger().info("Scene point good {} and bad {}", goodpoint, badpoint);
         } catch (IOException e) {
             Grasscutter.getLogger().error("Scene point files cannot be found, you cannot use teleport waypoints!");
         }

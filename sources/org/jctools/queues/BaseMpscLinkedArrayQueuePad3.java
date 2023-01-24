@@ -1,8 +1,9 @@
 package org.jctools.queues;
 
 /* compiled from: BaseMpscLinkedArrayQueue.java */
+/* access modifiers changed from: package-private */
 /* loaded from: grasscutter.jar:org/jctools/queues/BaseMpscLinkedArrayQueuePad3.class */
-abstract class BaseMpscLinkedArrayQueuePad3<E> extends BaseMpscLinkedArrayQueueConsumerFields<E> {
+public abstract class BaseMpscLinkedArrayQueuePad3<E> extends BaseMpscLinkedArrayQueueConsumerFields<E> {
     byte b000;
     byte b001;
     byte b002;

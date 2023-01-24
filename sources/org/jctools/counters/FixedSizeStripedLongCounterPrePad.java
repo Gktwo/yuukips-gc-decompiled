@@ -1,8 +1,9 @@
 package org.jctools.counters;
 
 /* compiled from: FixedSizeStripedLongCounter.java */
+/* access modifiers changed from: package-private */
 /* loaded from: grasscutter.jar:org/jctools/counters/FixedSizeStripedLongCounterPrePad.class */
-abstract class FixedSizeStripedLongCounterPrePad {
+public abstract class FixedSizeStripedLongCounterPrePad {
     byte b000;
     byte b001;
     byte b002;

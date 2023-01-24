@@ -252,12 +252,12 @@ public abstract class AbstractReferenceBigList<K> extends AbstractReferenceColle
 
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r11v0, types: [it.unimi.dsi.fastutil.objects.AbstractReferenceBigList, it.unimi.dsi.fastutil.objects.AbstractReferenceBigList<K>] */
-    /* JADX WARN: Type inference failed for: r14v0, types: [java.lang.Object[][], K[][], long] */
+    /* JADX WARN: Type inference failed for: r14v0, types: [long, java.lang.Object[][], K[][]] */
     /* JADX WARN: Type inference failed for: r17v0, types: [long] */
     /* JADX WARN: Type inference failed for: r2v0, types: [long] */
     /* JADX WARN: Type inference failed for: r0v5, types: [it.unimi.dsi.fastutil.objects.ObjectBigListIterator] */
     /* JADX WARN: Type inference failed for: r1v4, types: [long] */
-    /* JADX WARN: Type inference failed for: r2v3, types: [java.lang.Object[][], long] */
+    /* JADX WARN: Type inference failed for: r2v3, types: [long, java.lang.Object[][]] */
     /* JADX WARN: Type inference failed for: r1v10, types: [long] */
     /* JADX WARNING: Unknown variable types count: 3 */
     @Override // p014it.unimi.dsi.fastutil.objects.ReferenceBigList
@@ -335,7 +335,7 @@ public abstract class AbstractReferenceBigList<K> extends AbstractReferenceColle
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r11v0, types: [it.unimi.dsi.fastutil.objects.AbstractReferenceBigList, it.unimi.dsi.fastutil.objects.AbstractReferenceBigList<K>, long] */
+    /* JADX WARN: Type inference failed for: r11v0, types: [long, it.unimi.dsi.fastutil.objects.AbstractReferenceBigList, it.unimi.dsi.fastutil.objects.AbstractReferenceBigList<K>] */
     /* JADX WARN: Type inference failed for: r12v0, types: [long] */
     /* JADX WARN: Type inference failed for: r17v0, types: [long] */
     /* JADX WARN: Type inference failed for: r2v0, types: [long] */
@@ -449,7 +449,7 @@ public abstract class AbstractReferenceBigList<K> extends AbstractReferenceColle
 
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r11v0, types: [it.unimi.dsi.fastutil.objects.AbstractReferenceBigList, it.unimi.dsi.fastutil.objects.AbstractReferenceBigList<K>] */
-    /* JADX WARN: Type inference failed for: r15v0, types: [java.lang.Object[][], long] */
+    /* JADX WARN: Type inference failed for: r15v0, types: [long, java.lang.Object[][]] */
     /* JADX WARN: Type inference failed for: r0v8, types: [it.unimi.dsi.fastutil.objects.ObjectBigListIterator] */
     /* JADX WARN: Type inference failed for: r20v0 */
     /* JADX WARN: Type inference failed for: r20v1, types: [long] */

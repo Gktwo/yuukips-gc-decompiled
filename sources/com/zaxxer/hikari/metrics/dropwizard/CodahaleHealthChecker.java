@@ -36,8 +36,9 @@ public final class CodahaleHealthChecker {
     private CodahaleHealthChecker() {
     }
 
+    /* access modifiers changed from: private */
     /* loaded from: grasscutter.jar:com/zaxxer/hikari/metrics/dropwizard/CodahaleHealthChecker$ConnectivityHealthCheck.class */
-    private static class ConnectivityHealthCheck extends HealthCheck {
+    public static class ConnectivityHealthCheck extends HealthCheck {
         private final HikariPool pool;
         private final long checkTimeoutMs;
 
@@ -69,8 +70,9 @@ public final class CodahaleHealthChecker {
         }
     }
 
+    /* access modifiers changed from: private */
     /* loaded from: grasscutter.jar:com/zaxxer/hikari/metrics/dropwizard/CodahaleHealthChecker$Connection99Percent.class */
-    private static class Connection99Percent extends HealthCheck {
+    public static class Connection99Percent extends HealthCheck {
         private final Timer waitTimer;
         private final long expected99thPercentile;
 

@@ -1,9 +1,8 @@
 package com.lmax.disruptor;
 
 /* compiled from: RingBuffer.java */
-/* access modifiers changed from: package-private */
 /* loaded from: grasscutter.jar:com/lmax/disruptor/RingBufferPad.class */
-public abstract class RingBufferPad {
+abstract class RingBufferPad {
     protected byte p10;
     protected byte p11;
     protected byte p12;

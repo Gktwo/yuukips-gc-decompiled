@@ -31,8 +31,9 @@ public final class SourceContext extends GeneratedMessageV3 implements SourceCon
         this.fileName_ = "";
     }
 
+    /* access modifiers changed from: protected */
     @Override // com.google.protobuf.GeneratedMessageV3
-    protected Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unused) {
+    public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unused) {
         return new SourceContext();
     }
 

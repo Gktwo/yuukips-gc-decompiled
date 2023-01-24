@@ -1,7 +1,6 @@
 package emu.grasscutter.data.binout;
 
 import emu.grasscutter.data.common.PointData;
-import net.bytebuddy.utility.JavaConstant;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/data/binout/ScenePointEntry.class */
 public class ScenePointEntry {
@@ -62,12 +61,6 @@ public class ScenePointEntry {
 
     public PointData getPointData() {
         return this.pointData;
-    }
-
-    @Deprecated(forRemoval = true)
-    public ScenePointEntry(String name, PointData pointData) {
-        this.sceneId = Integer.parseInt(name.split(JavaConstant.Dynamic.DEFAULT_NAME)[0]);
-        this.pointData = pointData;
     }
 
     public ScenePointEntry(int sceneId, PointData pointData) {

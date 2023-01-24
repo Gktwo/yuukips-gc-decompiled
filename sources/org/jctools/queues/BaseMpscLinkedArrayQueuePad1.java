@@ -4,8 +4,9 @@ import java.util.AbstractQueue;
 import org.jctools.queues.IndexedQueueSizeUtil;
 
 /* compiled from: BaseMpscLinkedArrayQueue.java */
+/* access modifiers changed from: package-private */
 /* loaded from: grasscutter.jar:org/jctools/queues/BaseMpscLinkedArrayQueuePad1.class */
-abstract class BaseMpscLinkedArrayQueuePad1<E> extends AbstractQueue<E> implements IndexedQueueSizeUtil.IndexedQueue {
+public abstract class BaseMpscLinkedArrayQueuePad1<E> extends AbstractQueue<E> implements IndexedQueueSizeUtil.IndexedQueue {
     byte b000;
     byte b001;
     byte b002;

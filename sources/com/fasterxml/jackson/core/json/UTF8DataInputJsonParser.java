@@ -81,9 +81,8 @@ public class UTF8DataInputJsonParser extends ParserBase {
     protected void _closeInput() throws IOException {
     }
 
-    /* access modifiers changed from: protected */
     @Override // com.fasterxml.jackson.core.base.ParserBase
-    public void _releaseBuffers() throws IOException {
+    protected void _releaseBuffers() throws IOException {
         _releaseBuffers();
         this._symbols.release();
     }

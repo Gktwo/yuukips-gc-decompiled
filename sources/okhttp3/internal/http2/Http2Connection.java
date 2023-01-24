@@ -142,12 +142,12 @@ public final class Http2Connection implements Closeable {
                         if (this.this$0.intervalPongsReceived < this.this$0.intervalPingsSent) {
                             failDueToMissingPong = true;
                         } else {
-                            this.this$0.intervalPingsSent = this.this$0.intervalPingsSent + 1;
+                            this.this$0.intervalPingsSent++;
                             failDueToMissingPong = false;
                         }
                     }
                     if (failDueToMissingPong) {
-                        this.this$0.failConnection(null);
+                        Http2Connection.access$failConnection(this.this$0, null);
                         return -1;
                     }
                     this.this$0.writePing(false, 1, 0);
@@ -155,6 +155,10 @@ public final class Http2Connection implements Closeable {
                 }
             }, pingIntervalNanos);
         }
+    }
+
+    public static final /* synthetic */ void access$failConnection(Http2Connection $this, IOException e) {
+        $this.failConnection(e);
     }
 
     public final boolean getClient$okhttp() {
@@ -369,7 +373,7 @@ public final class Http2Connection implements Closeable {
                     this.this$0.writeSynReset$okhttp(this.$streamId$inlined, this.$errorCode$inlined);
                     return -1;
                 } catch (IOException e) {
-                    this.this$0.failConnection(e);
+                    Http2Connection.access$failConnection(this.this$0, e);
                     return -1;
                 }
             }
@@ -403,7 +407,7 @@ public final class Http2Connection implements Closeable {
                     this.this$0.getWriter().windowUpdate(this.$streamId$inlined, this.$unacknowledgedBytesRead$inlined);
                     return -1;
                 } catch (IOException e) {
-                    this.this$0.failConnection(e);
+                    Http2Connection.access$failConnection(this.this$0, e);
                     return -1;
                 }
             }
@@ -507,7 +511,7 @@ public final class Http2Connection implements Closeable {
         throw new AssertionError("Thread " + ((Object) Thread.currentThread().getName()) + " MUST NOT hold lock on " + this);
     }
 
-    public final void failConnection(IOException e) {
+    private final void failConnection(IOException e) {
         close$okhttp(ErrorCode.PROTOCOL_ERROR, ErrorCode.PROTOCOL_ERROR, e);
     }
 

@@ -96,8 +96,9 @@ public abstract class PropertySerializerMap {
         }
     }
 
+    /* access modifiers changed from: private */
     /* loaded from: grasscutter.jar:com/fasterxml/jackson/databind/ser/impl/PropertySerializerMap$Empty.class */
-    private static final class Empty extends PropertySerializerMap {
+    public static final class Empty extends PropertySerializerMap {
         public static final Empty FOR_PROPERTIES = new Empty(false);
         public static final Empty FOR_ROOT_VALUES = new Empty(true);
 

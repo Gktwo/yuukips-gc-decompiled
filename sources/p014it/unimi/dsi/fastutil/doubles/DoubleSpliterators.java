@@ -873,10 +873,9 @@ public final class DoubleSpliterators {
         return new SpliteratorConcatenator(a, offset, length);
     }
 
-    /* access modifiers changed from: private */
     /* renamed from: it.unimi.dsi.fastutil.doubles.DoubleSpliterators$SpliteratorFromIterator */
     /* loaded from: grasscutter.jar:it/unimi/dsi/fastutil/doubles/DoubleSpliterators$SpliteratorFromIterator.class */
-    public static class SpliteratorFromIterator implements DoubleSpliterator {
+    private static class SpliteratorFromIterator implements DoubleSpliterator {
         private static final int BATCH_INCREMENT_SIZE = 1024;
         private static final int BATCH_MAX_SIZE = 33554432;
         private final DoubleIterator iter;

@@ -1036,12 +1036,12 @@ public final class Utf8 {
 
         /* JADX DEBUG: Failed to insert an additional move for type inference into block B:70:0x025a */
         /* JADX WARN: Type inference failed for: r0v1, types: [long] */
-        /* JADX WARN: Type inference failed for: r2v21, types: [byte[], long] */
-        /* JADX WARN: Type inference failed for: r2v26, types: [byte[], long] */
-        /* JADX WARN: Type inference failed for: r2v31, types: [byte[], long] */
-        /* JADX WARN: Type inference failed for: r2v42, types: [byte[], long] */
-        /* JADX WARN: Type inference failed for: r2v47, types: [byte[], long] */
-        /* JADX WARN: Type inference failed for: r2v58, types: [byte[], long] */
+        /* JADX WARN: Type inference failed for: r2v21, types: [long, byte[]] */
+        /* JADX WARN: Type inference failed for: r2v26, types: [long, byte[]] */
+        /* JADX WARN: Type inference failed for: r2v31, types: [long, byte[]] */
+        /* JADX WARN: Type inference failed for: r2v42, types: [long, byte[]] */
+        /* JADX WARN: Type inference failed for: r2v47, types: [long, byte[]] */
+        /* JADX WARN: Type inference failed for: r2v58, types: [long, byte[]] */
         /* JADX WARNING: Unknown variable types count: 6 */
         @Override // com.google.protobuf.Utf8.Processor
         /* Code decompiled incorrectly, please refer to instructions dump. */
@@ -1214,12 +1214,12 @@ public final class Utf8 {
         /* JADX DEBUG: Failed to insert an additional move for type inference into block B:78:0x002f */
         /* JADX DEBUG: Failed to insert an additional move for type inference into block B:74:0x0013 */
         /* JADX WARN: Multi-variable type inference failed */
-        /* JADX WARN: Type inference failed for: r8v0, types: [byte[], long] */
+        /* JADX WARN: Type inference failed for: r8v0, types: [long, byte[]] */
         /* JADX WARN: Type inference failed for: r0v5, types: [long] */
         /* JADX WARN: Type inference failed for: r9v1 */
         /* JADX WARN: Type inference failed for: r9v2 */
         /* JADX WARN: Type inference failed for: r9v3, types: [long] */
-        /* JADX WARN: Type inference failed for: r9v4, types: [byte[], long] */
+        /* JADX WARN: Type inference failed for: r9v4, types: [long, byte[]] */
         /* JADX WARN: Type inference failed for: r9v5 */
         /* JADX WARN: Type inference failed for: r9v6, types: [long] */
         /* JADX WARN: Type inference failed for: r9v8, types: [long] */

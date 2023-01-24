@@ -337,7 +337,7 @@ public abstract class AbstractIntBigList extends AbstractIntCollection implement
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r0v5, types: [it.unimi.dsi.fastutil.ints.IntBigListIterator] */
     /* JADX WARN: Type inference failed for: r1v4, types: [long] */
-    /* JADX WARN: Type inference failed for: r2v3, types: [int[][], long] */
+    /* JADX WARN: Type inference failed for: r2v3, types: [long, int[][]] */
     /* JADX WARN: Type inference failed for: r1v10, types: [long] */
     /* JADX WARNING: Unknown variable types count: 2 */
     @Override // p014it.unimi.dsi.fastutil.ints.IntBigList
@@ -528,7 +528,7 @@ public abstract class AbstractIntBigList extends AbstractIntCollection implement
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r15v0, types: [int[][], long] */
+    /* JADX WARN: Type inference failed for: r15v0, types: [long, int[][]] */
     /* JADX WARN: Type inference failed for: r0v8, types: [it.unimi.dsi.fastutil.ints.IntBigListIterator] */
     /* JADX WARN: Type inference failed for: r20v0 */
     /* JADX WARN: Type inference failed for: r20v1, types: [long] */

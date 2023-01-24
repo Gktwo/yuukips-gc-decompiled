@@ -258,7 +258,7 @@ public class FileReadWrite extends FilesKt__FilePathComponentsKt {
 
     /* JADX DEBUG: Multi-variable search result rejected for r0v11, resolved type: java.io.FileInputStream */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r0v4, types: [byte[], java.lang.Object] */
+    /* JADX WARN: Type inference failed for: r0v4, types: [java.lang.Object, byte[]] */
     /* JADX WARNING: Unknown variable types count: 1 */
     /* Code decompiled incorrectly, please refer to instructions dump. */
     public static final void forEachBlock(@org.jetbrains.annotations.NotNull java.io.File r4, int r5, @org.jetbrains.annotations.NotNull kotlin.jvm.functions.Function2<? super byte[], ? super java.lang.Integer, kotlin.Unit> r6) {

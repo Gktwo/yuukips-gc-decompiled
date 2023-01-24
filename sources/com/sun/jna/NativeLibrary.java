@@ -119,8 +119,9 @@ public class NativeLibrary {
                         return Integer.valueOf(Native.getLastError());
                     }
 
+                    /* access modifiers changed from: package-private */
                     @Override // com.sun.jna.Function
-                    Object invoke(Method invokingMethod, Class<?>[] paramTypes, Class<?> returnType, Object[] inArgs, Map<String, ?> options2) {
+                    public Object invoke(Method invokingMethod, Class<?>[] paramTypes, Class<?> returnType, Object[] inArgs, Map<String, ?> options2) {
                         return Integer.valueOf(Native.getLastError());
                     }
                 });

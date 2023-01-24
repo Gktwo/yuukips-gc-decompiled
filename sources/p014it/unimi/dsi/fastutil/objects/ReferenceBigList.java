@@ -45,7 +45,7 @@ public interface ReferenceBigList<K> extends BigList<K>, ReferenceCollection<K> 
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r15v0, types: [java.lang.Object[][], long] */
+    /* JADX WARN: Type inference failed for: r15v0, types: [long, java.lang.Object[][]] */
     /* JADX WARN: Type inference failed for: r20v0 */
     /* JADX WARN: Type inference failed for: r20v1, types: [long] */
     /* JADX WARN: Type inference failed for: r20v4 */

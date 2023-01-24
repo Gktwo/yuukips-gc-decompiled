@@ -57,8 +57,9 @@ public class AttributedStringBuilder extends AttributedCharSequence implements A
         return new AttributedStyle(this.style[index], this.style[index]);
     }
 
+    /* access modifiers changed from: package-private */
     @Override // org.jline.utils.AttributedCharSequence
-    long styleCodeAt(int index) {
+    public long styleCodeAt(int index) {
         return this.style[index];
     }
 

@@ -12,10 +12,9 @@ import java.util.Set;
 import java.util.Spliterator;
 import java.util.Spliterators;
 
-/* access modifiers changed from: package-private */
 @GwtCompatible
 /* loaded from: grasscutter.jar:com/google/common/collect/AbstractMultimap.class */
-public abstract class AbstractMultimap<K, V> implements Multimap<K, V> {
+abstract class AbstractMultimap<K, V> implements Multimap<K, V> {
     private transient Collection<Map.Entry<K, V>> entries;
     private transient Set<K> keySet;
     private transient Multiset<K> keys;

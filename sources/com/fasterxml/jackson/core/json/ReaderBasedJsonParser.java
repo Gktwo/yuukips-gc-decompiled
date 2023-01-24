@@ -126,9 +126,8 @@ public class ReaderBasedJsonParser extends ParserBase {
         }
     }
 
-    /* access modifiers changed from: protected */
     @Override // com.fasterxml.jackson.core.base.ParserBase
-    public void _releaseBuffers() throws IOException {
+    protected void _releaseBuffers() throws IOException {
         char[] buf;
         _releaseBuffers();
         this._symbols.release();

@@ -645,7 +645,7 @@ public class SceneScriptManager {
             return entity instanceof EntityGadget;
         }).filter(entity
         /*  JADX ERROR: Method code generation error
-            java.lang.ClassCastException: class jadx.core.dex.instructions.args.LiteralArg cannot be cast to class jadx.core.dex.instructions.args.RegisterArg (jadx.core.dex.instructions.args.LiteralArg and jadx.core.dex.instructions.args.RegisterArg are in unnamed module of loader com.intellij.ide.plugins.cl.PluginClassLoader @e90d9cf)
+            java.lang.ClassCastException: class jadx.core.dex.instructions.args.LiteralArg cannot be cast to class jadx.core.dex.instructions.args.RegisterArg (jadx.core.dex.instructions.args.LiteralArg and jadx.core.dex.instructions.args.RegisterArg are in unnamed module of loader com.intellij.ide.plugins.cl.PluginClassLoader @362ff29)
             	at jadx.core.codegen.InsnGen.makeInlinedLambdaMethod(InsnGen.java:908)
             	at jadx.core.codegen.InsnGen.makeInvokeLambda(InsnGen.java:814)
             	at jadx.core.codegen.InsnGen.makeInvoke(InsnGen.java:756)
@@ -830,7 +830,7 @@ public class SceneScriptManager {
             return entity instanceof EntityMonster;
         }).filter(entity
         /*  JADX ERROR: Method code generation error
-            java.lang.ClassCastException: class jadx.core.dex.instructions.args.LiteralArg cannot be cast to class jadx.core.dex.instructions.args.RegisterArg (jadx.core.dex.instructions.args.LiteralArg and jadx.core.dex.instructions.args.RegisterArg are in unnamed module of loader com.intellij.ide.plugins.cl.PluginClassLoader @e90d9cf)
+            java.lang.ClassCastException: class jadx.core.dex.instructions.args.LiteralArg cannot be cast to class jadx.core.dex.instructions.args.RegisterArg (jadx.core.dex.instructions.args.LiteralArg and jadx.core.dex.instructions.args.RegisterArg are in unnamed module of loader com.intellij.ide.plugins.cl.PluginClassLoader @362ff29)
             	at jadx.core.codegen.InsnGen.makeInlinedLambdaMethod(InsnGen.java:908)
             	at jadx.core.codegen.InsnGen.makeInvokeLambda(InsnGen.java:814)
             	at jadx.core.codegen.InsnGen.makeInvoke(InsnGen.java:756)

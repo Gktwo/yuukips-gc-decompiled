@@ -675,7 +675,7 @@ public class IntOpenHashBigSet extends AbstractIntSet implements Serializable, C
     /* JADX DEBUG: Multi-variable search result rejected for r10v1, resolved type: long */
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r10v0 */
-    /* JADX WARN: Type inference failed for: r0v6, types: [int[][], long] */
+    /* JADX WARN: Type inference failed for: r0v6, types: [long, int[][]] */
     /* JADX WARN: Type inference failed for: r10v2, types: [long] */
     /* JADX WARNING: Unknown variable types count: 1 */
     @Override // p014it.unimi.dsi.fastutil.ints.IntIterable

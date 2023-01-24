@@ -259,7 +259,7 @@ public class StdJDBCDelegate implements DriverDelegate, StdJDBCConstants {
 
     /* JADX WARN: Type inference failed for: r0v11, types: [long] */
     /* JADX WARN: Type inference failed for: r14v0 */
-    /* JADX WARN: Type inference failed for: r14v1, types: [java.lang.StringBuilder, long] */
+    /* JADX WARN: Type inference failed for: r14v1, types: [long, java.lang.StringBuilder] */
     /* JADX WARN: Type inference failed for: r14v3 */
     /* JADX WARNING: Unknown variable types count: 1 */
     @Override // org.quartz.impl.jdbcjobstore.DriverDelegate

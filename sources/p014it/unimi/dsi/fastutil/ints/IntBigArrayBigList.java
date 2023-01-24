@@ -955,8 +955,8 @@ public class IntBigArrayBigList extends AbstractIntBigList implements RandomAcce
                 return this.pos > 0;
             }
 
-            /* JADX WARN: Type inference failed for: r0v4, types: [int[][], long] */
-            /* JADX WARN: Type inference failed for: r3v1, types: [int[][], long] */
+            /* JADX WARN: Type inference failed for: r0v4, types: [long, int[][]] */
+            /* JADX WARN: Type inference failed for: r3v1, types: [long, int[][]] */
             /* JADX WARNING: Unknown variable types count: 2 */
             @Override // p014it.unimi.dsi.fastutil.ints.IntIterator, java.util.PrimitiveIterator.OfInt
             /* Code decompiled incorrectly, please refer to instructions dump. */
@@ -990,8 +990,8 @@ public class IntBigArrayBigList extends AbstractIntBigList implements RandomAcce
                 throw new UnsupportedOperationException("Method not decompiled: p014it.unimi.dsi.fastutil.ints.IntBigArrayBigList.C43481.nextInt():int");
             }
 
-            /* JADX WARN: Type inference failed for: r0v4, types: [int[][], long] */
-            /* JADX WARN: Type inference failed for: r3v2, types: [int[][], long] */
+            /* JADX WARN: Type inference failed for: r0v4, types: [long, int[][]] */
+            /* JADX WARN: Type inference failed for: r3v2, types: [long, int[][]] */
             /* JADX WARNING: Unknown variable types count: 2 */
             @Override // p014it.unimi.dsi.fastutil.ints.IntBidirectionalIterator
             /* Code decompiled incorrectly, please refer to instructions dump. */
@@ -1066,8 +1066,8 @@ public class IntBigArrayBigList extends AbstractIntBigList implements RandomAcce
 
             /* JADX DEBUG: Multi-variable search result rejected for r11v0, resolved type: it.unimi.dsi.fastutil.ints.IntBigArrayBigList$1 */
             /* JADX WARN: Multi-variable type inference failed */
-            /* JADX WARN: Type inference failed for: r1v5, types: [int[][], long] */
-            /* JADX WARN: Type inference failed for: r4v1, types: [int[][], long] */
+            /* JADX WARN: Type inference failed for: r1v5, types: [long, int[][]] */
+            /* JADX WARN: Type inference failed for: r4v1, types: [long, int[][]] */
             /* JADX WARNING: Unknown variable types count: 2 */
             @Override // java.util.PrimitiveIterator.OfInt
             /* Code decompiled incorrectly, please refer to instructions dump. */

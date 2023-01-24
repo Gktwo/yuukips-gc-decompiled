@@ -107,8 +107,9 @@ public class NexusAccessor {
         }
     }
 
+    /* access modifiers changed from: protected */
     /* loaded from: grasscutter.jar:net/bytebuddy/dynamic/NexusAccessor$Dispatcher.class */
-    protected interface Dispatcher {
+    public interface Dispatcher {
         boolean isAlive();
 
         void clean(Reference<? extends ClassLoader> reference);

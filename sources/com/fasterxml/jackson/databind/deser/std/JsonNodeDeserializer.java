@@ -81,9 +81,8 @@ public class JsonNodeDeserializer extends BaseNodeDeserializer<JsonNode> {
         }
     }
 
-    /* access modifiers changed from: package-private */
     /* loaded from: grasscutter.jar:com/fasterxml/jackson/databind/deser/std/JsonNodeDeserializer$ObjectDeserializer.class */
-    public static final class ObjectDeserializer extends BaseNodeDeserializer<ObjectNode> {
+    static final class ObjectDeserializer extends BaseNodeDeserializer<ObjectNode> {
         private static final long serialVersionUID = 1;
         protected static final ObjectDeserializer _instance = new ObjectDeserializer();
 
@@ -120,9 +119,8 @@ public class JsonNodeDeserializer extends BaseNodeDeserializer<JsonNode> {
         }
     }
 
-    /* access modifiers changed from: package-private */
     /* loaded from: grasscutter.jar:com/fasterxml/jackson/databind/deser/std/JsonNodeDeserializer$ArrayDeserializer.class */
-    public static final class ArrayDeserializer extends BaseNodeDeserializer<ArrayNode> {
+    static final class ArrayDeserializer extends BaseNodeDeserializer<ArrayNode> {
         private static final long serialVersionUID = 1;
         protected static final ArrayDeserializer _instance = new ArrayDeserializer();
 

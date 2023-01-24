@@ -240,8 +240,9 @@ public enum FieldType {
         throw new RuntimeException("Unable to identify parameter type for List<T>");
     }
 
+    /* access modifiers changed from: package-private */
     /* loaded from: grasscutter.jar:com/google/protobuf/FieldType$Collection.class */
-    enum Collection {
+    public enum Collection {
         SCALAR(false),
         VECTOR(true),
         PACKED_VECTOR(true),

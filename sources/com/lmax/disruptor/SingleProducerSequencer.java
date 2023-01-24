@@ -92,7 +92,7 @@ public final class SingleProducerSequencer extends SingleProducerSequencerFields
         	at jadx.core.dex.nodes.MethodNode.load(MethodNode.java:194)
         	at jadx.core.dex.nodes.ClassNode.load(ClassNode.java:309)
         	at jadx.core.ProcessClass.process(ProcessClass.java:53)
-        	at jadx.core.ProcessClass.generateCode(ProcessClass.java:85)
+        	at jadx.core.ProcessClass.generateCode(ProcessClass.java:87)
         	at jadx.core.dex.nodes.ClassNode.decompile(ClassNode.java:300)
         	at jadx.core.dex.nodes.ClassNode.decompile(ClassNode.java:265)
         Caused by: jadx.core.utils.exceptions.JadxRuntimeException: Failed to process invoke-custom instruction: CallSite{[{ENCODED_METHOD_HANDLE: INVOKE_STATIC: Ljava/lang/invoke/StringConcatFactory;->makeConcatWithConstants(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;}, makeConcatWithConstants, {ENCODED_METHOD_TYPE: (I, Lcom/lmax/disruptor/WaitStrategy;, Lcom/lmax/disruptor/Sequence;, Ljava/lang/String;)Ljava/lang/String;}, SingleProducerSequencer{bufferSize=, waitStrategy=, cursor=, gatingSequences=}]}

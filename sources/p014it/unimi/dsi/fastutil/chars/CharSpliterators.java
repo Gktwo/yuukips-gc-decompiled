@@ -929,10 +929,9 @@ public final class CharSpliterators {
         return new SpliteratorConcatenator(a, offset, length);
     }
 
-    /* access modifiers changed from: private */
     /* renamed from: it.unimi.dsi.fastutil.chars.CharSpliterators$SpliteratorFromIterator */
     /* loaded from: grasscutter.jar:it/unimi/dsi/fastutil/chars/CharSpliterators$SpliteratorFromIterator.class */
-    public static class SpliteratorFromIterator implements CharSpliterator {
+    private static class SpliteratorFromIterator implements CharSpliterator {
         private static final int BATCH_INCREMENT_SIZE = 1024;
         private static final int BATCH_MAX_SIZE = 33554432;
         private final CharIterator iter;

@@ -349,7 +349,7 @@ public final class LongBigListIterators {
 
         /* JADX DEBUG: Multi-variable search result rejected for r10v0, resolved type: it.unimi.dsi.fastutil.longs.LongBigListIterators$AbstractIndexBasedBigIterator */
         /* JADX WARN: Multi-variable type inference failed */
-        /* JADX WARN: Type inference failed for: r3v1, types: [it.unimi.dsi.fastutil.longs.LongBigListIterators$AbstractIndexBasedBigIterator, long] */
+        /* JADX WARN: Type inference failed for: r3v1, types: [long, it.unimi.dsi.fastutil.longs.LongBigListIterators$AbstractIndexBasedBigIterator] */
         /* JADX WARNING: Unknown variable types count: 1 */
         @Override // p014it.unimi.dsi.fastutil.longs.LongIterator, java.util.PrimitiveIterator.OfLong
         /* Code decompiled incorrectly, please refer to instructions dump. */
@@ -395,7 +395,7 @@ public final class LongBigListIterators {
 
         /* JADX DEBUG: Multi-variable search result rejected for r11v0, resolved type: it.unimi.dsi.fastutil.longs.LongBigListIterators$AbstractIndexBasedBigIterator */
         /* JADX WARN: Multi-variable type inference failed */
-        /* JADX WARN: Type inference failed for: r4v1, types: [it.unimi.dsi.fastutil.longs.LongBigListIterators$AbstractIndexBasedBigIterator, long] */
+        /* JADX WARN: Type inference failed for: r4v1, types: [long, it.unimi.dsi.fastutil.longs.LongBigListIterators$AbstractIndexBasedBigIterator] */
         /* JADX WARNING: Unknown variable types count: 1 */
         @Override // java.util.PrimitiveIterator.OfLong
         /* Code decompiled incorrectly, please refer to instructions dump. */
@@ -520,7 +520,7 @@ public final class LongBigListIterators {
 
         /* JADX DEBUG: Multi-variable search result rejected for r8v0, resolved type: it.unimi.dsi.fastutil.longs.LongBigListIterators$AbstractIndexBasedBigListIterator */
         /* JADX WARN: Multi-variable type inference failed */
-        /* JADX WARN: Type inference failed for: r3v2, types: [it.unimi.dsi.fastutil.longs.LongBigListIterators$AbstractIndexBasedBigListIterator, long] */
+        /* JADX WARN: Type inference failed for: r3v2, types: [long, it.unimi.dsi.fastutil.longs.LongBigListIterators$AbstractIndexBasedBigListIterator] */
         /* JADX WARNING: Unknown variable types count: 1 */
         @Override // p014it.unimi.dsi.fastutil.longs.LongBidirectionalIterator
         /* Code decompiled incorrectly, please refer to instructions dump. */

@@ -1903,7 +1903,7 @@ public abstract class JobStoreSupport implements JobStore, Constants {
     }
 
     /* JADX WARN: Type inference failed for: r0v2, types: [long] */
-    /* JADX WARN: Type inference failed for: r13v2, types: [java.lang.StringBuilder, long] */
+    /* JADX WARN: Type inference failed for: r13v2, types: [long, java.lang.StringBuilder] */
     /* JADX WARN: Type inference failed for: r13v6 */
     /* JADX WARN: Type inference failed for: r13v7 */
     /* JADX WARNING: Unknown variable types count: 1 */

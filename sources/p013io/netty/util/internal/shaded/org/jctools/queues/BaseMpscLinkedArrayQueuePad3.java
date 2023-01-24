@@ -1,10 +1,9 @@
 package p013io.netty.util.internal.shaded.org.jctools.queues;
 
 /* compiled from: BaseMpscLinkedArrayQueue.java */
-/* access modifiers changed from: package-private */
 /* renamed from: io.netty.util.internal.shaded.org.jctools.queues.BaseMpscLinkedArrayQueuePad3 */
 /* loaded from: grasscutter.jar:io/netty/util/internal/shaded/org/jctools/queues/BaseMpscLinkedArrayQueuePad3.class */
-public abstract class BaseMpscLinkedArrayQueuePad3<E> extends BaseMpscLinkedArrayQueueConsumerFields<E> {
+abstract class BaseMpscLinkedArrayQueuePad3<E> extends BaseMpscLinkedArrayQueueConsumerFields<E> {
     byte b000;
     byte b001;
     byte b002;

@@ -2,8 +2,9 @@ package com.google.protobuf;
 
 import java.lang.reflect.Field;
 
+/* access modifiers changed from: package-private */
 /* loaded from: grasscutter.jar:com/google/protobuf/OneofInfo.class */
-final class OneofInfo {
+public final class OneofInfo {
 
     /* renamed from: id */
     private final int f366id;

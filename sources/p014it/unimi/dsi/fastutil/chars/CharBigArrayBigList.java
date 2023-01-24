@@ -935,8 +935,8 @@ public class CharBigArrayBigList extends AbstractCharBigList implements RandomAc
                 return this.pos > 0;
             }
 
-            /* JADX WARN: Type inference failed for: r0v4, types: [char[][], long] */
-            /* JADX WARN: Type inference failed for: r3v1, types: [char[][], long] */
+            /* JADX WARN: Type inference failed for: r0v4, types: [long, char[][]] */
+            /* JADX WARN: Type inference failed for: r3v1, types: [long, char[][]] */
             /* JADX WARNING: Unknown variable types count: 2 */
             @Override // p014it.unimi.dsi.fastutil.chars.CharIterator
             /* Code decompiled incorrectly, please refer to instructions dump. */
@@ -970,8 +970,8 @@ public class CharBigArrayBigList extends AbstractCharBigList implements RandomAc
                 throw new UnsupportedOperationException("Method not decompiled: p014it.unimi.dsi.fastutil.chars.CharBigArrayBigList.C36751.nextChar():char");
             }
 
-            /* JADX WARN: Type inference failed for: r0v4, types: [char[][], long] */
-            /* JADX WARN: Type inference failed for: r3v2, types: [char[][], long] */
+            /* JADX WARN: Type inference failed for: r0v4, types: [long, char[][]] */
+            /* JADX WARN: Type inference failed for: r3v2, types: [long, char[][]] */
             /* JADX WARNING: Unknown variable types count: 2 */
             @Override // p014it.unimi.dsi.fastutil.chars.CharBidirectionalIterator
             /* Code decompiled incorrectly, please refer to instructions dump. */
@@ -1046,8 +1046,8 @@ public class CharBigArrayBigList extends AbstractCharBigList implements RandomAc
 
             /* JADX DEBUG: Multi-variable search result rejected for r11v0, resolved type: it.unimi.dsi.fastutil.chars.CharBigArrayBigList$1 */
             /* JADX WARN: Multi-variable type inference failed */
-            /* JADX WARN: Type inference failed for: r1v5, types: [char[][], long] */
-            /* JADX WARN: Type inference failed for: r4v1, types: [char[][], long] */
+            /* JADX WARN: Type inference failed for: r1v5, types: [long, char[][]] */
+            /* JADX WARN: Type inference failed for: r4v1, types: [long, char[][]] */
             /* JADX WARNING: Unknown variable types count: 2 */
             @Override // p014it.unimi.dsi.fastutil.chars.CharIterator
             /* Code decompiled incorrectly, please refer to instructions dump. */

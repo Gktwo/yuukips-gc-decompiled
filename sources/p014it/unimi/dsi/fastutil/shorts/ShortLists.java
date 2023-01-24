@@ -1507,9 +1507,10 @@ public final class ShortLists {
         return l instanceof RandomAccess ? new UnmodifiableRandomAccessList(l) : new UnmodifiableList(l);
     }
 
+    /* access modifiers changed from: package-private */
     /* renamed from: it.unimi.dsi.fastutil.shorts.ShortLists$ImmutableListBase */
     /* loaded from: grasscutter.jar:it/unimi/dsi/fastutil/shorts/ShortLists$ImmutableListBase.class */
-    static abstract class ImmutableListBase extends AbstractShortList implements ShortList {
+    public static abstract class ImmutableListBase extends AbstractShortList implements ShortList {
         @Override // p014it.unimi.dsi.fastutil.shorts.AbstractShortList, p014it.unimi.dsi.fastutil.shorts.ShortList
         @Deprecated
         public final void add(int index, short k) {

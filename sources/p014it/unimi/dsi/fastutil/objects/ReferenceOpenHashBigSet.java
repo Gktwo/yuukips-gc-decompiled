@@ -667,7 +667,7 @@ public class ReferenceOpenHashBigSet<K> extends AbstractReferenceSet<K> implemen
     /* JADX DEBUG: Multi-variable search result rejected for r10v1, resolved type: long */
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r10v0 */
-    /* JADX WARN: Type inference failed for: r0v6, types: [java.lang.Object[][], K[][], long] */
+    /* JADX WARN: Type inference failed for: r0v6, types: [long, java.lang.Object[][], K[][]] */
     /* JADX WARN: Type inference failed for: r10v2, types: [long] */
     @Override // java.lang.Iterable
     public void forEach(Consumer<? super K> action) {

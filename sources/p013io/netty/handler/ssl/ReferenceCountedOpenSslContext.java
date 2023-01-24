@@ -451,10 +451,9 @@ public abstract class ReferenceCountedOpenSslContext extends SslContext implemen
         return this.refCnt.release(decrement);
     }
 
-    /* access modifiers changed from: package-private */
     /* renamed from: io.netty.handler.ssl.ReferenceCountedOpenSslContext$AbstractCertificateVerifier */
     /* loaded from: grasscutter.jar:io/netty/handler/ssl/ReferenceCountedOpenSslContext$AbstractCertificateVerifier.class */
-    public static abstract class AbstractCertificateVerifier extends CertificateVerifier {
+    static abstract class AbstractCertificateVerifier extends CertificateVerifier {
         private final OpenSslEngineMap engineMap;
 
         abstract void verify(ReferenceCountedOpenSslEngine referenceCountedOpenSslEngine, X509Certificate[] x509CertificateArr, String str) throws Exception;

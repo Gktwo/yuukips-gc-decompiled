@@ -82,9 +82,8 @@ public final class KQueueDomainSocketChannel extends AbstractKQueueStreamChannel
         return (DomainSocketAddress) localAddress();
     }
 
-    /* access modifiers changed from: protected */
     @Override // p013io.netty.channel.kqueue.AbstractKQueueStreamChannel
-    public int doWriteSingle(ChannelOutboundBuffer in) throws Exception {
+    protected int doWriteSingle(ChannelOutboundBuffer in) throws Exception {
         Object msg = in.current();
         if (!(msg instanceof FileDescriptor) || this.socket.sendFd(((FileDescriptor) msg).intValue()) <= 0) {
             return doWriteSingle(in);
@@ -93,9 +92,8 @@ public final class KQueueDomainSocketChannel extends AbstractKQueueStreamChannel
         return 1;
     }
 
-    /* access modifiers changed from: protected */
     @Override // p013io.netty.channel.kqueue.AbstractKQueueStreamChannel, p013io.netty.channel.AbstractChannel
-    public Object filterOutboundMessage(Object msg) {
+    protected Object filterOutboundMessage(Object msg) {
         if (msg instanceof FileDescriptor) {
             return msg;
         }
@@ -114,9 +112,8 @@ public final class KQueueDomainSocketChannel extends AbstractKQueueStreamChannel
             super();
         }
 
-        /* access modifiers changed from: package-private */
         @Override // p013io.netty.channel.kqueue.AbstractKQueueStreamChannel.KQueueStreamUnsafe, p013io.netty.channel.kqueue.AbstractKQueueChannel.AbstractKQueueUnsafe
-        public void readReady(KQueueRecvByteAllocatorHandle allocHandle) {
+        void readReady(KQueueRecvByteAllocatorHandle allocHandle) {
             switch (KQueueDomainSocketChannel.this.config().getReadMode()) {
                 case BYTES:
                     readReady(allocHandle);

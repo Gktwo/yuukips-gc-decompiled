@@ -97,7 +97,7 @@ public class IntArrayFrontCodedList extends AbstractObjectList<int[]> implements
     /* JADX DEBUG: Multi-variable search result rejected for r0v3, resolved type: long[] */
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r0v4 */
-    /* JADX WARN: Type inference failed for: r0v6, types: [int[][], long] */
+    /* JADX WARN: Type inference failed for: r0v6, types: [long, int[][]] */
     /* JADX WARN: Type inference failed for: r0v22, types: [long] */
     /* access modifiers changed from: private */
     /* JADX WARNING: Unknown variable types count: 2 */

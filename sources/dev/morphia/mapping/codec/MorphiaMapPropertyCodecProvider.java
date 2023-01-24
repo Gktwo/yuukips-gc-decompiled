@@ -16,8 +16,9 @@ import org.bson.codecs.configuration.CodecConfigurationException;
 import org.bson.codecs.pojo.PropertyCodecRegistry;
 import org.bson.codecs.pojo.TypeWithTypeParameters;
 
+/* access modifiers changed from: package-private */
 /* loaded from: grasscutter.jar:dev/morphia/mapping/codec/MorphiaMapPropertyCodecProvider.class */
-class MorphiaMapPropertyCodecProvider extends MorphiaPropertyCodecProvider {
+public class MorphiaMapPropertyCodecProvider extends MorphiaPropertyCodecProvider {
     @Override // org.bson.codecs.pojo.PropertyCodecProvider
     public <T> Codec<T> get(TypeWithTypeParameters<T> type, PropertyCodecRegistry registry) {
         if (Map.class.isAssignableFrom(type.getType())) {

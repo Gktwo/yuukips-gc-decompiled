@@ -2119,7 +2119,7 @@ public final class Bzip2DivSufSort {
         return m2;
     }
 
-    /* JADX INFO: Multiple debug info for r1v33 int: [D('s1' int), D('s' int)] */
+    /* JADX INFO: Multiple debug info for r1v33 int: [D('s' int), D('s1' int)] */
     private int constructBWT(int[] bucketA, int[] bucketB) {
         byte[] T = this.f999T;
         int[] SA = this.f998SA;
@@ -2132,21 +2132,21 @@ public final class Bzip2DivSufSort {
             t = 0;
             c2 = -1;
             for (int j = bucketA[c1 + 1]; i <= j; j--) {
-                int s = SA[j];
-                if (0 <= s) {
-                    int s2 = s - 1;
-                    if (s2 < 0) {
-                        s2 = n - 1;
+                int s1 = SA[j];
+                if (0 <= s1) {
+                    int s = s1 - 1;
+                    if (s < 0) {
+                        s = n - 1;
                     }
-                    int c0 = (T[s2] == 1 ? 1 : 0) & 255;
+                    int c0 = (T[s] == 1 ? 1 : 0) & 255;
                     if (c0 <= c1) {
-                        SA[j] = s ^ -1;
-                        if (0 < s2 && ((T[s2 - 1] == 1 ? 1 : 0) & 255) > c0) {
-                            s2 ^= -1;
+                        SA[j] = s1 ^ -1;
+                        if (0 < s && ((T[s - 1] == 1 ? 1 : 0) & 255) > c0) {
+                            s ^= -1;
                         }
                         if (c2 == c0) {
                             t--;
-                            SA[t] = s2;
+                            SA[t] = s;
                         } else {
                             if (0 <= c2) {
                                 bucketB[BUCKET_B(c2, c1)] = t;
@@ -2154,30 +2154,30 @@ public final class Bzip2DivSufSort {
                             c2 = c0;
                             int i2 = bucketB[BUCKET_B(c0, c1)] - 1;
                             t = i2;
-                            SA[i2] = s2;
+                            SA[i2] = s;
                         }
                     }
                 } else {
-                    SA[j] = s ^ -1;
+                    SA[j] = s1 ^ -1;
                 }
             }
         }
         for (int i3 = 0; i3 < n; i3++) {
-            int s3 = SA[i3];
-            int s1 = s3;
-            if (0 <= s3) {
-                int s4 = s3 - 1;
-                if (s4 < 0) {
-                    s4 = n - 1;
+            int s2 = SA[i3];
+            int s12 = s2;
+            if (0 <= s2) {
+                int s3 = s2 - 1;
+                if (s3 < 0) {
+                    s3 = n - 1;
                 }
-                int c02 = (T[s4] == 1 ? 1 : 0) & 255;
-                if (c02 >= ((T[s4 + 1] == 1 ? 1 : 0) & 255)) {
-                    if (0 < s4 && ((T[s4 - 1] == 1 ? 1 : 0) & 255) < c02) {
-                        s4 ^= -1;
+                int c02 = (T[s3] == 1 ? 1 : 0) & 255;
+                if (c02 >= ((T[s3 + 1] == 1 ? 1 : 0) & 255)) {
+                    if (0 < s3 && ((T[s3 - 1] == 1 ? 1 : 0) & 255) < c02) {
+                        s3 ^= -1;
                     }
                     if (c02 == c2) {
                         t++;
-                        SA[t] = s4;
+                        SA[t] = s3;
                     } else {
                         if (c2 != -1) {
                             bucketA[c2] = t;
@@ -2185,17 +2185,17 @@ public final class Bzip2DivSufSort {
                         c2 = c02;
                         int i4 = bucketA[c02] + 1;
                         t = i4;
-                        SA[i4] = s4;
+                        SA[i4] = s3;
                     }
                 }
             } else {
-                s1 ^= -1;
+                s12 ^= -1;
             }
-            if (s1 == 0) {
+            if (s12 == 0) {
                 SA[i3] = T[n - 1] == 1 ? 1 : 0;
                 orig = i3;
             } else {
-                SA[i3] = T[s1 - 1] == 1 ? 1 : 0;
+                SA[i3] = T[s12 - 1] == 1 ? 1 : 0;
             }
         }
         return orig;

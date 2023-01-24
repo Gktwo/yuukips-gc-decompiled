@@ -20921,7 +20921,7 @@ class _Arrays extends _ArraysJvm {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r6v0, types: [java.lang.Object, long[]] */
+    /* JADX WARN: Type inference failed for: r6v0, types: [long[], java.lang.Object] */
     /* JADX WARN: Type inference failed for: r0v7 */
     /* JADX WARN: Type inference failed for: r10v0 */
     /* JADX WARN: Type inference failed for: r10v1, types: [long] */
@@ -20995,7 +20995,7 @@ class _Arrays extends _ArraysJvm {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r6v0, types: [java.lang.Object, double[]] */
+    /* JADX WARN: Type inference failed for: r6v0, types: [double[], java.lang.Object] */
     /* JADX WARN: Type inference failed for: r0v7 */
     /* JADX WARN: Type inference failed for: r10v0 */
     /* JADX WARN: Type inference failed for: r10v1, types: [double] */
@@ -21150,7 +21150,7 @@ class _Arrays extends _ArraysJvm {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r6v0, types: [java.lang.Object, long[]] */
+    /* JADX WARN: Type inference failed for: r6v0, types: [long[], java.lang.Object] */
     /* JADX WARN: Type inference failed for: r0v7 */
     /* JADX WARN: Type inference failed for: r10v0 */
     /* JADX WARN: Type inference failed for: r10v1, types: [long] */
@@ -21226,7 +21226,7 @@ class _Arrays extends _ArraysJvm {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r6v0, types: [java.lang.Object, double[]] */
+    /* JADX WARN: Type inference failed for: r6v0, types: [double[], java.lang.Object] */
     /* JADX WARN: Type inference failed for: r0v7 */
     /* JADX WARN: Type inference failed for: r10v0 */
     /* JADX WARN: Type inference failed for: r10v1, types: [double] */

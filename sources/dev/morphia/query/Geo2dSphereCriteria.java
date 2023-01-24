@@ -10,9 +10,8 @@ import dev.morphia.mapping.codec.writer.DocumentWriter;
 import org.bson.Document;
 import org.bson.codecs.EncoderContext;
 
-/* access modifiers changed from: package-private */
 /* loaded from: grasscutter.jar:dev/morphia/query/Geo2dSphereCriteria.class */
-public final class Geo2dSphereCriteria extends FieldCriteria {
+final class Geo2dSphereCriteria extends FieldCriteria {
     private final Geometry geometry;
     private Document options;
     private CoordinateReferenceSystem crs;

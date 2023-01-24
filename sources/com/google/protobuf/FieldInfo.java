@@ -3,8 +3,9 @@ package com.google.protobuf;
 import com.google.protobuf.Internal;
 import java.lang.reflect.Field;
 
+/* access modifiers changed from: package-private */
 /* loaded from: grasscutter.jar:com/google/protobuf/FieldInfo.class */
-final class FieldInfo implements Comparable<FieldInfo> {
+public final class FieldInfo implements Comparable<FieldInfo> {
     private final Field field;
     private final FieldType type;
     private final Class<?> messageClass;

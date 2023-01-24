@@ -41,8 +41,9 @@ public abstract class ContiguousSet<C extends Comparable> extends ImmutableSorte
 
     /* JADX DEBUG: Multi-variable search result rejected for r4v0, resolved type: com.google.common.collect.ContiguousSet<C extends java.lang.Comparable> */
     /* JADX WARN: Multi-variable type inference failed */
+    /* access modifiers changed from: package-private */
     @Override // com.google.common.collect.ImmutableSortedSet
-    /* bridge */ /* synthetic */ ImmutableSortedSet headSetImpl(Object obj, boolean z) {
+    public /* bridge */ /* synthetic */ ImmutableSortedSet headSetImpl(Object obj, boolean z) {
         return headSetImpl((ContiguousSet<C>) ((Comparable) obj), z);
     }
 

@@ -84,7 +84,7 @@ public interface CharBigList extends BigList<Character>, CharCollection, Compara
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r15v0, types: [char[][], long] */
+    /* JADX WARN: Type inference failed for: r15v0, types: [long, char[][]] */
     /* JADX WARN: Type inference failed for: r0v9, types: [it.unimi.dsi.fastutil.chars.CharBigListIterator] */
     /* JADX WARN: Type inference failed for: r20v0 */
     /* JADX WARN: Type inference failed for: r20v1, types: [long] */

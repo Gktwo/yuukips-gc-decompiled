@@ -524,8 +524,8 @@ public final class CharBigArrays {
     /* JADX WARN: Type inference failed for: r28v1 */
     /* JADX WARN: Type inference failed for: r26v1, types: [long] */
     /* JADX WARN: Type inference failed for: r24v1, types: [long] */
-    /* JADX WARN: Type inference failed for: r22v1, types: [char[][], long] */
-    /* JADX WARN: Type inference failed for: r28v2, types: [char[][], long] */
+    /* JADX WARN: Type inference failed for: r22v1, types: [long, char[][]] */
+    /* JADX WARN: Type inference failed for: r28v2, types: [long, char[][]] */
     /* JADX WARN: Type inference failed for: r26v2, types: [long] */
     /* JADX WARN: Type inference failed for: r24v2, types: [long] */
     /* JADX WARN: Type inference failed for: r26v3, types: [long] */
@@ -592,8 +592,8 @@ public final class CharBigArrays {
         /* JADX WARN: Type inference failed for: r32v1 */
         /* JADX WARN: Type inference failed for: r30v1, types: [long] */
         /* JADX WARN: Type inference failed for: r28v1, types: [long] */
-        /* JADX WARN: Type inference failed for: r26v1, types: [char[][], long] */
-        /* JADX WARN: Type inference failed for: r32v2, types: [char[][], long] */
+        /* JADX WARN: Type inference failed for: r26v1, types: [long, char[][]] */
+        /* JADX WARN: Type inference failed for: r32v2, types: [long, char[][]] */
         /* JADX WARN: Type inference failed for: r30v2, types: [long] */
         /* JADX WARN: Type inference failed for: r28v2, types: [long] */
         /* JADX WARN: Type inference failed for: r30v3, types: [long] */

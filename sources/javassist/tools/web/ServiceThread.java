@@ -4,8 +4,9 @@ import java.io.IOException;
 import java.net.Socket;
 
 /* compiled from: Webserver.java */
+/* access modifiers changed from: package-private */
 /* loaded from: grasscutter.jar:javassist/tools/web/ServiceThread.class */
-class ServiceThread extends Thread {
+public class ServiceThread extends Thread {
     Webserver web;
     Socket sock;
 

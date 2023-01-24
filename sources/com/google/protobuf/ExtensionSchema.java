@@ -5,8 +5,9 @@ import com.google.protobuf.FieldSet.FieldDescriptorLite;
 import java.io.IOException;
 import java.util.Map;
 
+/* access modifiers changed from: package-private */
 /* loaded from: grasscutter.jar:com/google/protobuf/ExtensionSchema.class */
-abstract class ExtensionSchema<T extends FieldSet.FieldDescriptorLite<T>> {
+public abstract class ExtensionSchema<T extends FieldSet.FieldDescriptorLite<T>> {
     /* access modifiers changed from: package-private */
     public abstract boolean hasExtensions(MessageLite messageLite);
 

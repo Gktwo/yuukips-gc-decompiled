@@ -418,7 +418,7 @@ public abstract class AbstractLongBigList extends AbstractLongCollection impleme
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r11v0, types: [it.unimi.dsi.fastutil.longs.AbstractLongBigList, long] */
+    /* JADX WARN: Type inference failed for: r11v0, types: [long, it.unimi.dsi.fastutil.longs.AbstractLongBigList] */
     /* JADX WARN: Type inference failed for: r12v0, types: [long] */
     /* JADX WARN: Type inference failed for: r17v0, types: [long] */
     /* JADX WARN: Type inference failed for: r0v8, types: [it.unimi.dsi.fastutil.longs.LongBigListIterator] */

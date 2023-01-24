@@ -348,7 +348,7 @@ public final class ShortBigListIterators {
 
         /* JADX DEBUG: Multi-variable search result rejected for r10v0, resolved type: it.unimi.dsi.fastutil.shorts.ShortBigListIterators$AbstractIndexBasedBigIterator */
         /* JADX WARN: Multi-variable type inference failed */
-        /* JADX WARN: Type inference failed for: r3v1, types: [it.unimi.dsi.fastutil.shorts.ShortBigListIterators$AbstractIndexBasedBigIterator, long] */
+        /* JADX WARN: Type inference failed for: r3v1, types: [long, it.unimi.dsi.fastutil.shorts.ShortBigListIterators$AbstractIndexBasedBigIterator] */
         /* JADX WARNING: Unknown variable types count: 1 */
         @Override // p014it.unimi.dsi.fastutil.shorts.ShortIterator
         /* Code decompiled incorrectly, please refer to instructions dump. */
@@ -394,7 +394,7 @@ public final class ShortBigListIterators {
 
         /* JADX DEBUG: Multi-variable search result rejected for r11v0, resolved type: it.unimi.dsi.fastutil.shorts.ShortBigListIterators$AbstractIndexBasedBigIterator */
         /* JADX WARN: Multi-variable type inference failed */
-        /* JADX WARN: Type inference failed for: r4v1, types: [it.unimi.dsi.fastutil.shorts.ShortBigListIterators$AbstractIndexBasedBigIterator, long] */
+        /* JADX WARN: Type inference failed for: r4v1, types: [long, it.unimi.dsi.fastutil.shorts.ShortBigListIterators$AbstractIndexBasedBigIterator] */
         /* JADX WARNING: Unknown variable types count: 1 */
         @Override // p014it.unimi.dsi.fastutil.shorts.ShortIterator
         /* Code decompiled incorrectly, please refer to instructions dump. */

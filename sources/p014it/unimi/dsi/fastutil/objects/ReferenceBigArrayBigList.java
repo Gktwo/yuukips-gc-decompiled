@@ -831,8 +831,8 @@ public class ReferenceBigArrayBigList<K> extends AbstractReferenceBigList<K> imp
                 return this.pos > 0;
             }
 
-            /* JADX WARN: Type inference failed for: r0v4, types: [K[][], long] */
-            /* JADX WARN: Type inference failed for: r3v1, types: [java.lang.Object[][], long] */
+            /* JADX WARN: Type inference failed for: r0v4, types: [long, K[][]] */
+            /* JADX WARN: Type inference failed for: r3v1, types: [long, java.lang.Object[][]] */
             /* JADX WARNING: Unknown variable types count: 1 */
             @Override // java.util.Iterator
             /* Code decompiled incorrectly, please refer to instructions dump. */
@@ -866,8 +866,8 @@ public class ReferenceBigArrayBigList<K> extends AbstractReferenceBigList<K> imp
                 throw new UnsupportedOperationException("Method not decompiled: p014it.unimi.dsi.fastutil.objects.ReferenceBigArrayBigList.C49531.next():java.lang.Object");
             }
 
-            /* JADX WARN: Type inference failed for: r0v4, types: [K[][], long] */
-            /* JADX WARN: Type inference failed for: r3v2, types: [java.lang.Object[][], long] */
+            /* JADX WARN: Type inference failed for: r0v4, types: [long, K[][]] */
+            /* JADX WARN: Type inference failed for: r3v2, types: [long, java.lang.Object[][]] */
             /* JADX WARNING: Unknown variable types count: 1 */
             @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
             /* Code decompiled incorrectly, please refer to instructions dump. */
@@ -942,8 +942,8 @@ public class ReferenceBigArrayBigList<K> extends AbstractReferenceBigList<K> imp
 
             /* JADX DEBUG: Multi-variable search result rejected for r11v0, resolved type: it.unimi.dsi.fastutil.objects.ReferenceBigArrayBigList$1 */
             /* JADX WARN: Multi-variable type inference failed */
-            /* JADX WARN: Type inference failed for: r1v5, types: [K[][], long] */
-            /* JADX WARN: Type inference failed for: r4v1, types: [java.lang.Object[][], long] */
+            /* JADX WARN: Type inference failed for: r1v5, types: [long, K[][]] */
+            /* JADX WARN: Type inference failed for: r4v1, types: [long, java.lang.Object[][]] */
             /* JADX WARNING: Unknown variable types count: 1 */
             @Override // java.util.Iterator
             /* Code decompiled incorrectly, please refer to instructions dump. */

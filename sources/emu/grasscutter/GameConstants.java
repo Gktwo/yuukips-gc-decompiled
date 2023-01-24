@@ -18,7 +18,7 @@ public final class GameConstants {
     public static final int BATTLE_PASS_POINT_PER_WEEK = 10000;
     public static final int BATTLE_PASS_LEVEL_PRICE = 150;
     public static final int BATTLE_PASS_CURRENT_INDEX = 2;
-    public static String[] VERSION = {"3.3.0", "3.3.50"};
+    public static String[] VERSION = {"3.3.0", "3.3.54", "3.3.51", "3.3.52", "3.3.53", "3.3.50"};
     public static double[] VERSION_SDK = {2.4d, 2.6d, 2.7d};
     public static String Redirect_URL = "<meta http-equiv='refresh' content='2;url=https://ps.yuuki.me'/>";
     public static String Update_URL = "https://ps.yuuki.me/genshin";

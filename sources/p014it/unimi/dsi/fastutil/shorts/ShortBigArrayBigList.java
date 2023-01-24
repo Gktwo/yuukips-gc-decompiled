@@ -538,7 +538,7 @@ public class ShortBigArrayBigList extends AbstractShortBigList implements Random
 
             /* JADX DEBUG: Multi-variable search result rejected for r13v0, resolved type: it.unimi.dsi.fastutil.shorts.ShortBigArrayBigList$SubList$SubListIterator */
             /* JADX WARN: Multi-variable type inference failed */
-            /* JADX WARN: Type inference failed for: r1v7, types: [it.unimi.dsi.fastutil.shorts.ShortConsumer, short[][]] */
+            /* JADX WARN: Type inference failed for: r1v7, types: [short[][], it.unimi.dsi.fastutil.shorts.ShortConsumer] */
             /* JADX WARNING: Unknown variable types count: 1 */
             @Override // p014it.unimi.dsi.fastutil.shorts.ShortBigListIterators.AbstractIndexBasedBigIterator, p014it.unimi.dsi.fastutil.shorts.ShortIterator
             /* Code decompiled incorrectly, please refer to instructions dump. */
@@ -935,8 +935,8 @@ public class ShortBigArrayBigList extends AbstractShortBigList implements Random
                 return this.pos > 0;
             }
 
-            /* JADX WARN: Type inference failed for: r0v4, types: [short[][], long] */
-            /* JADX WARN: Type inference failed for: r3v1, types: [short[][], long] */
+            /* JADX WARN: Type inference failed for: r0v4, types: [long, short[][]] */
+            /* JADX WARN: Type inference failed for: r3v1, types: [long, short[][]] */
             /* JADX WARNING: Unknown variable types count: 2 */
             @Override // p014it.unimi.dsi.fastutil.shorts.ShortIterator
             /* Code decompiled incorrectly, please refer to instructions dump. */
@@ -970,8 +970,8 @@ public class ShortBigArrayBigList extends AbstractShortBigList implements Random
                 throw new UnsupportedOperationException("Method not decompiled: p014it.unimi.dsi.fastutil.shorts.ShortBigArrayBigList.C51751.nextShort():short");
             }
 
-            /* JADX WARN: Type inference failed for: r0v4, types: [short[][], long] */
-            /* JADX WARN: Type inference failed for: r3v2, types: [short[][], long] */
+            /* JADX WARN: Type inference failed for: r0v4, types: [long, short[][]] */
+            /* JADX WARN: Type inference failed for: r3v2, types: [long, short[][]] */
             /* JADX WARNING: Unknown variable types count: 2 */
             @Override // p014it.unimi.dsi.fastutil.shorts.ShortBidirectionalIterator
             /* Code decompiled incorrectly, please refer to instructions dump. */
@@ -1046,8 +1046,8 @@ public class ShortBigArrayBigList extends AbstractShortBigList implements Random
 
             /* JADX DEBUG: Multi-variable search result rejected for r11v0, resolved type: it.unimi.dsi.fastutil.shorts.ShortBigArrayBigList$1 */
             /* JADX WARN: Multi-variable type inference failed */
-            /* JADX WARN: Type inference failed for: r1v5, types: [short[][], long] */
-            /* JADX WARN: Type inference failed for: r4v1, types: [short[][], long] */
+            /* JADX WARN: Type inference failed for: r1v5, types: [long, short[][]] */
+            /* JADX WARN: Type inference failed for: r4v1, types: [long, short[][]] */
             /* JADX WARNING: Unknown variable types count: 2 */
             @Override // p014it.unimi.dsi.fastutil.shorts.ShortIterator
             /* Code decompiled incorrectly, please refer to instructions dump. */

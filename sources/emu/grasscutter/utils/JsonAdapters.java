@@ -29,12 +29,16 @@ public class JsonAdapters {
                 $SwitchMap$com$google$gson$stream$JsonToken[JsonToken.BEGIN_ARRAY.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
+            try {
+                $SwitchMap$com$google$gson$stream$JsonToken[JsonToken.BOOLEAN.ordinal()] = 4;
+            } catch (NoSuchFieldError e4) {
+            }
         }
     }
 
     /* loaded from: grasscutter.jar:emu/grasscutter/utils/JsonAdapters$DynamicFloatAdapter.class */
     static class DynamicFloatAdapter extends TypeAdapter<DynamicFloat> {
-        /*  JADX ERROR: Dependency scan failed at insn: 0x00A0: INVOKE_CUSTOM r-3
+        /*  JADX ERROR: Dependency scan failed at insn: 0x00A4: INVOKE_CUSTOM r-3
             java.lang.IndexOutOfBoundsException: Index 4 out of bounds for length 4
             	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:64)
             	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:70)
@@ -50,7 +54,7 @@ public class JsonAdapters {
             	at jadx.core.dex.visitors.usage.UsageInfoVisitor.init(UsageInfoVisitor.java:36)
             	at jadx.core.dex.nodes.RootNode.runPreDecompileStage(RootNode.java:267)
             */
-        /*  JADX ERROR: Dependency scan failed at insn: 0x00C8: INVOKE_CUSTOM r-7
+        /*  JADX ERROR: Dependency scan failed at insn: 0x00CE: INVOKE_CUSTOM r-7
             java.lang.IndexOutOfBoundsException: Index 4 out of bounds for length 4
             	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:64)
             	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:70)
@@ -66,7 +70,7 @@ public class JsonAdapters {
             	at jadx.core.dex.visitors.usage.UsageInfoVisitor.init(UsageInfoVisitor.java:36)
             	at jadx.core.dex.nodes.RootNode.runPreDecompileStage(RootNode.java:267)
             */
-        /*  JADX ERROR: Failed to decode insn: 0x00A0: INVOKE_CUSTOM r3, method: emu.grasscutter.utils.JsonAdapters.DynamicFloatAdapter.read(com.google.gson.stream.JsonReader):emu.grasscutter.data.common.DynamicFloat
+        /*  JADX ERROR: Failed to decode insn: 0x00A4: INVOKE_CUSTOM r3, method: emu.grasscutter.utils.JsonAdapters.DynamicFloatAdapter.read(com.google.gson.stream.JsonReader):emu.grasscutter.data.common.DynamicFloat
             jadx.core.utils.exceptions.JadxRuntimeException: 'invoke-custom' instruction processing error: Failed to process invoke-custom instruction: CallSite{[{ENCODED_METHOD_HANDLE: INVOKE_STATIC: Ljava/lang/invoke/StringConcatFactory;->makeConcatWithConstants(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;}, makeConcatWithConstants, {ENCODED_METHOD_TYPE: (Ljava/lang/String;)Ljava/lang/String;}, Invalid DynamicFloat definition - ]}
             	at jadx.core.dex.instructions.InvokeCustomBuilder.build(InvokeCustomBuilder.java:55)
             	at jadx.core.dex.instructions.InsnDecoder.invoke(InsnDecoder.java:568)
@@ -85,7 +89,7 @@ public class JsonAdapters {
             	at jadx.core.dex.instructions.InvokeCustomBuilder.build(InvokeCustomBuilder.java:42)
             	... 12 more
             */
-        /*  JADX ERROR: Failed to decode insn: 0x00C8: INVOKE_CUSTOM r2, method: emu.grasscutter.utils.JsonAdapters.DynamicFloatAdapter.read(com.google.gson.stream.JsonReader):emu.grasscutter.data.common.DynamicFloat
+        /*  JADX ERROR: Failed to decode insn: 0x00CE: INVOKE_CUSTOM r2, method: emu.grasscutter.utils.JsonAdapters.DynamicFloatAdapter.read(com.google.gson.stream.JsonReader):emu.grasscutter.data.common.DynamicFloat
             jadx.core.utils.exceptions.JadxRuntimeException: 'invoke-custom' instruction processing error: Failed to process invoke-custom instruction: CallSite{[{ENCODED_METHOD_HANDLE: INVOKE_STATIC: Ljava/lang/invoke/StringConcatFactory;->makeConcatWithConstants(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;}, makeConcatWithConstants, {ENCODED_METHOD_TYPE: (Ljava/lang/String;)Ljava/lang/String;}, Invalid DynamicFloat definition - ]}
             	at jadx.core.dex.instructions.InvokeCustomBuilder.build(InvokeCustomBuilder.java:55)
             	at jadx.core.dex.instructions.InsnDecoder.invoke(InsnDecoder.java:568)
@@ -114,10 +118,11 @@ public class JsonAdapters {
                 int r1 = r1.ordinal()
                 r0 = r0[r1]
                 switch(r0) {
-                    case 1: goto L_0x0024;
-                    case 2: goto L_0x0030;
-                    case 3: goto L_0x003d;
-                    default: goto L_0x00bd;
+                    case 1: goto L_0x0028;
+                    case 2: goto L_0x0034;
+                    case 3: goto L_0x0041;
+                    case 4: goto L_0x00c1;
+                    default: goto L_0x00c3;
                 }
                 emu.grasscutter.data.common.DynamicFloat r0 = new emu.grasscutter.data.common.DynamicFloat
                 r1 = r0
@@ -140,7 +145,7 @@ public class JsonAdapters {
                 r8 = r0
                 r0 = r7
                 boolean r0 = r0.hasNext()
-                if (r0 == 0) goto L_0x00b0
+                if (r0 == 0) goto L_0x00b4
                 r0 = r8
                 int[] r1 = emu.grasscutter.utils.JsonAdapters.C27091.$SwitchMap$com$google$gson$stream$JsonToken
                 r2 = r7
@@ -148,23 +153,23 @@ public class JsonAdapters {
                 int r2 = r2.ordinal()
                 r1 = r1[r2]
                 switch(r1) {
-                    case 1: goto L_0x0078;
-                    case 2: goto L_0x0086;
-                    default: goto L_0x0095;
+                    case 1: goto L_0x007c;
+                    case 2: goto L_0x008a;
+                    default: goto L_0x0099;
                 }
                 emu.grasscutter.data.common.DynamicFloat$StackOp r1 = new emu.grasscutter.data.common.DynamicFloat$StackOp
                 r2 = r1
                 r3 = r7
                 java.lang.String r3 = r3.nextString()
                 r2.<init>(r3)
-                goto L_0x00a9
+                goto L_0x00ad
                 emu.grasscutter.data.common.DynamicFloat$StackOp r1 = new emu.grasscutter.data.common.DynamicFloat$StackOp
                 r2 = r1
                 r3 = r7
                 double r3 = r3.nextDouble()
                 float r3 = (float) r3
                 r2.<init>(r3)
-                goto L_0x00a9
+                goto L_0x00ad
                 java.io.IOException r1 = new java.io.IOException
                 r2 = r1
                 r3 = r7
@@ -174,13 +179,15 @@ public class JsonAdapters {
                 r2.<init>(r3)
                 throw r1
                 boolean r0 = r0.add(r1)
-                goto L_0x0049
+                goto L_0x004d
                 r0 = r7
                 r0.endArray()
                 emu.grasscutter.data.common.DynamicFloat r0 = new emu.grasscutter.data.common.DynamicFloat
                 r1 = r0
                 r2 = r8
                 r1.<init>(r2)
+                return r0
+                r0 = 0
                 return r0
                 java.io.IOException r0 = new java.io.IOException
                 r1 = r0

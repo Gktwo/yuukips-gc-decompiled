@@ -84,7 +84,7 @@ public interface IntBigList extends BigList<Integer>, IntCollection, Comparable<
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r15v0, types: [int[][], long] */
+    /* JADX WARN: Type inference failed for: r15v0, types: [long, int[][]] */
     /* JADX WARN: Type inference failed for: r0v9, types: [it.unimi.dsi.fastutil.ints.IntBigListIterator] */
     /* JADX WARN: Type inference failed for: r20v0 */
     /* JADX WARN: Type inference failed for: r20v1, types: [long] */

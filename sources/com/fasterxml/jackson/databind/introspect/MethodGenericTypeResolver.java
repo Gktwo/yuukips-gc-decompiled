@@ -12,9 +12,8 @@ import java.lang.reflect.WildcardType;
 import java.util.ArrayList;
 import java.util.Objects;
 
-/* access modifiers changed from: package-private */
 /* loaded from: grasscutter.jar:com/fasterxml/jackson/databind/introspect/MethodGenericTypeResolver.class */
-public final class MethodGenericTypeResolver {
+final class MethodGenericTypeResolver {
     MethodGenericTypeResolver() {
     }
 

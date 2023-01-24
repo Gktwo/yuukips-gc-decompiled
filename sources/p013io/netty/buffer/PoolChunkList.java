@@ -7,9 +7,10 @@ import java.util.Iterator;
 import java.util.List;
 import p013io.netty.util.internal.StringUtil;
 
+/* access modifiers changed from: package-private */
 /* renamed from: io.netty.buffer.PoolChunkList */
 /* loaded from: grasscutter.jar:io/netty/buffer/PoolChunkList.class */
-final class PoolChunkList<T> implements PoolChunkListMetric {
+public final class PoolChunkList<T> implements PoolChunkListMetric {
     private static final Iterator<PoolChunkMetric> EMPTY_METRICS;
     private final PoolArena<T> arena;
     private final PoolChunkList<T> nextList;

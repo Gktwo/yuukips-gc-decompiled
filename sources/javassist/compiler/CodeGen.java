@@ -188,10 +188,10 @@ public abstract class CodeGen extends Visitor implements Opcode, TokenId {
             case 303:
                 c = 'B';
                 break;
-            case TokenId.CHAR:
+            case TokenId.CHAR /* 306 */:
                 c = 'C';
                 break;
-            case TokenId.DOUBLE:
+            case TokenId.DOUBLE /* 312 */:
                 c = 'D';
                 break;
             case 317:
@@ -200,7 +200,7 @@ public abstract class CodeGen extends Visitor implements Opcode, TokenId {
             case 324:
                 c = 'I';
                 break;
-            case TokenId.LONG:
+            case TokenId.LONG /* 326 */:
                 c = 'J';
                 break;
             case 334:

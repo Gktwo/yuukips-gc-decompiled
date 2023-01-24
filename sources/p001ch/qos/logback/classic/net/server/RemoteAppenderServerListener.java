@@ -5,10 +5,9 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import p001ch.qos.logback.core.net.server.ServerSocketListener;
 
-/* access modifiers changed from: package-private */
 /* renamed from: ch.qos.logback.classic.net.server.RemoteAppenderServerListener */
 /* loaded from: grasscutter.jar:ch/qos/logback/classic/net/server/RemoteAppenderServerListener.class */
-public class RemoteAppenderServerListener extends ServerSocketListener<RemoteAppenderClient> {
+class RemoteAppenderServerListener extends ServerSocketListener<RemoteAppenderClient> {
     public RemoteAppenderServerListener(ServerSocket serverSocket) {
         super(serverSocket);
     }

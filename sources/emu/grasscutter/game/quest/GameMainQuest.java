@@ -29,9 +29,7 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 import java.util.Optional;
-import java.util.stream.IntStream;
 import org.bson.types.ObjectId;
 
 @Entity(value = "quests", useDiscriminator = false)
@@ -471,167 +469,228 @@ public class GameMainQuest {
                 }
             }
             if (mainQuestData.getSuggestTrackMainQuestList() != null) {
-                IntStream filter = Arrays.stream(mainQuestData.getSuggestTrackMainQuestList()).filter((v0) -> {
-                    return Objects.nonNull(v0);
-                });
-                QuestManager questManager = getQuestManager();
-                Objects.requireNonNull(questManager);
-                filter.forEach(this::startMainQuest);
-                return;
-            }
-            return;
-        }
-        Grasscutter.getLogger().error("not found quest finish: ", Integer.valueOf(getParentQuestId()));
-    }
+                try {
+                    Arrays.stream(mainQuestData.getSuggestTrackMainQuestList()).forEach(
+                    /*  JADX ERROR: Method code generation error
+                        jadx.core.utils.exceptions.CodegenException: Error generate insn: 0x00db: INVOKE  
+                          (wrap: java.util.stream.IntStream : 0x00d2: INVOKE  (r0v28 java.util.stream.IntStream A[REMOVE]) = 
+                          (wrap: int[] : 0x00cf: INVOKE  (r0v27 int[] A[REMOVE]) = 
+                          (r0v18 'mainQuestData' emu.grasscutter.data.binout.MainQuestData A[D('mainQuestData' emu.grasscutter.data.binout.MainQuestData)])
+                         type: VIRTUAL call: emu.grasscutter.data.binout.MainQuestData.getSuggestTrackMainQuestList():int[])
+                         type: STATIC call: java.util.Arrays.stream(int[]):java.util.stream.IntStream)
+                          (wrap: java.util.function.IntConsumer : 0x00d6: INVOKE_CUSTOM (r1v11 java.util.function.IntConsumer A[REMOVE]) = 
+                          (r5v0 'this' emu.grasscutter.game.quest.GameMainQuest A[D('this' emu.grasscutter.game.quest.GameMainQuest), DONT_INLINE, IMMUTABLE_TYPE, THIS])
+                        
+                         handle type: INVOKE_INSTANCE
+                         lambda: java.util.function.IntConsumer.accept(int):void
+                         call insn: ?: INVOKE  (r1 I:emu.grasscutter.game.quest.GameMainQuest), (v1 int) type: VIRTUAL call: emu.grasscutter.game.quest.GameMainQuest.lambda$finish$3(int):void)
+                         type: INTERFACE call: java.util.stream.IntStream.forEach(java.util.function.IntConsumer):void in method: emu.grasscutter.game.quest.GameMainQuest.finish():void, file: grasscutter.jar:emu/grasscutter/game/quest/GameMainQuest.class
+                        	at jadx.core.codegen.InsnGen.makeInsn(InsnGen.java:285)
+                        	at jadx.core.codegen.InsnGen.makeInsn(InsnGen.java:248)
+                        	at jadx.core.codegen.RegionGen.makeSimpleBlock(RegionGen.java:105)
+                        	at jadx.core.dex.nodes.IBlock.generate(IBlock.java:15)
+                        	at jadx.core.codegen.RegionGen.makeRegion(RegionGen.java:65)
+                        	at jadx.core.dex.regions.Region.generate(Region.java:35)
+                        	at jadx.core.codegen.RegionGen.makeRegion(RegionGen.java:65)
+                        	at jadx.core.codegen.RegionGen.makeRegionIndent(RegionGen.java:94)
+                        	at jadx.core.codegen.RegionGen.makeTryCatch(RegionGen.java:314)
+                        	at jadx.core.dex.regions.TryCatchRegion.generate(TryCatchRegion.java:85)
+                        	at jadx.core.codegen.RegionGen.makeRegion(RegionGen.java:65)
+                        	at jadx.core.dex.regions.Region.generate(Region.java:35)
+                        	at jadx.core.codegen.RegionGen.makeRegion(RegionGen.java:65)
+                        	at jadx.core.codegen.RegionGen.makeRegionIndent(RegionGen.java:94)
+                        	at jadx.core.codegen.RegionGen.makeIf(RegionGen.java:137)
+                        	at jadx.core.dex.regions.conditions.IfRegion.generate(IfRegion.java:137)
+                        	at jadx.core.codegen.RegionGen.makeRegion(RegionGen.java:65)
+                        	at jadx.core.dex.regions.Region.generate(Region.java:35)
+                        	at jadx.core.codegen.RegionGen.makeRegion(RegionGen.java:65)
+                        	at jadx.core.codegen.RegionGen.makeRegionIndent(RegionGen.java:94)
+                        	at jadx.core.codegen.RegionGen.makeIf(RegionGen.java:137)
+                        	at jadx.core.dex.regions.conditions.IfRegion.generate(IfRegion.java:137)
+                        	at jadx.core.codegen.RegionGen.makeRegion(RegionGen.java:65)
+                        	at jadx.core.dex.regions.Region.generate(Region.java:35)
+                        	at jadx.core.codegen.RegionGen.makeRegion(RegionGen.java:65)
+                        	at jadx.core.dex.regions.Region.generate(Region.java:35)
+                        	at jadx.core.codegen.RegionGen.makeRegion(RegionGen.java:65)
+                        	at jadx.core.dex.regions.Region.generate(Region.java:35)
+                        	at jadx.core.codegen.RegionGen.makeRegion(RegionGen.java:65)
+                        	at jadx.core.codegen.MethodGen.addRegionInsns(MethodGen.java:261)
+                        	at jadx.core.codegen.MethodGen.addInstructions(MethodGen.java:254)
+                        	at jadx.core.codegen.ClassGen.addMethodCode(ClassGen.java:349)
+                        	at jadx.core.codegen.ClassGen.addMethod(ClassGen.java:302)
+                        	at jadx.core.codegen.ClassGen.lambda$addInnerClsAndMethods$2(ClassGen.java:271)
+                        	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+                        	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+                        	at java.base/java.util.stream.SortedOps$RefSortingSink.end(SortedOps.java:395)
+                        	at java.base/java.util.stream.Sink$ChainedReference.end(Sink.java:258)
+                        Caused by: java.lang.NullPointerException: Cannot invoke "jadx.core.dex.instructions.args.SSAVar.getCodeVar()" because the return value of "jadx.core.dex.instructions.args.RegisterArg.getSVar()" is null
+                        	at jadx.core.codegen.InsnGen.makeInlinedLambdaMethod(InsnGen.java:900)
+                        	at jadx.core.codegen.InsnGen.makeInvokeLambda(InsnGen.java:814)
+                        	at jadx.core.codegen.InsnGen.makeInvoke(InsnGen.java:756)
+                        	at jadx.core.codegen.InsnGen.makeInsnBody(InsnGen.java:397)
+                        	at jadx.core.codegen.InsnGen.addWrappedArg(InsnGen.java:141)
+                        	at jadx.core.codegen.InsnGen.addArg(InsnGen.java:120)
+                        	at jadx.core.codegen.InsnGen.addArg(InsnGen.java:104)
+                        	at jadx.core.codegen.InsnGen.generateMethodArguments(InsnGen.java:976)
+                        	at jadx.core.codegen.InsnGen.makeInvoke(InsnGen.java:801)
+                        	at jadx.core.codegen.InsnGen.makeInsnBody(InsnGen.java:397)
+                        	at jadx.core.codegen.InsnGen.makeInsn(InsnGen.java:278)
+                        	... 37 more
+                        */
+                    /*
+                    // Method dump skipped, instructions count: 258
+                    */
+                    throw new UnsupportedOperationException("Method not decompiled: emu.grasscutter.game.quest.GameMainQuest.finish():void");
+                }
 
-    public void fail() {
-    }
+                public void fail() {
+                }
 
-    public void cancel() {
-    }
+                public void cancel() {
+                }
 
-    public List<Position> rewindTo(GameQuest targetQuest, boolean notifyDelete) {
-        if (targetQuest == null || !targetQuest.rewind(notifyDelete)) {
-            return null;
-        }
-        Grasscutter.getLogger().info("rewindTo: {}", Integer.valueOf(targetQuest.getSubQuestId()));
-        List<Position> posAndRot = new ArrayList<>();
-        if (hasRewindPosition(targetQuest.getSubQuestId(), posAndRot)) {
-            return posAndRot;
-        }
-        for (GameQuest quest : getChildQuests().values().stream().filter(p -> {
-            return (p.getState() == QuestState.QUEST_STATE_UNFINISHED || p.getState() == QuestState.QUEST_STATE_FINISHED) && p.getQuestData() != null && p.getQuestData().isRewind();
-        }).toList()) {
-            if (hasRewindPosition(quest.getSubQuestId(), posAndRot)) {
-                return posAndRot;
-            }
-        }
-        return null;
-    }
+                public List<Position> rewindTo(GameQuest targetQuest, boolean notifyDelete) {
+                    if (targetQuest == null || !targetQuest.rewind(notifyDelete)) {
+                        return null;
+                    }
+                    Grasscutter.getLogger().info("rewindTo: {}", Integer.valueOf(targetQuest.getSubQuestId()));
+                    List<Position> posAndRot = new ArrayList<>();
+                    if (hasRewindPosition(targetQuest.getSubQuestId(), posAndRot)) {
+                        return posAndRot;
+                    }
+                    for (GameQuest quest : getChildQuests().values().stream().filter(p -> {
+                        return (p.getState() == QuestState.QUEST_STATE_UNFINISHED || p.getState() == QuestState.QUEST_STATE_FINISHED) && p.getQuestData() != null && p.getQuestData().isRewind();
+                    }).toList()) {
+                        if (hasRewindPosition(quest.getSubQuestId(), posAndRot)) {
+                            return posAndRot;
+                        }
+                    }
+                    return null;
+                }
 
-    public List<Position> rewind() {
-        Grasscutter.getLogger().debug("rewind2");
-        if (this.questManager == null) {
-            this.questManager = getOwner().getQuestManager();
-        }
-        GameQuest highestActiveQuest = getActiveQuests().stream().filter(q -> {
-            return q.getQuestData() != null;
-        }).max(Comparator.comparing(q -> {
-            return Integer.valueOf(q.getQuestData().getOrder());
-        })).orElse(null);
-        if (highestActiveQuest == null) {
-            Optional<GameQuest> firstUnstarted = getChildQuests().values().stream().filter(q -> {
-                return (q.getQuestData() == null || q.getState().getValue() == QuestState.FINISHED.getValue()) ? false : true;
-            }).min(Comparator.comparingInt(a -> {
-                return a.getQuestData().getOrder();
-            }));
-            if (firstUnstarted.isEmpty()) {
-                return null;
-            }
-            highestActiveQuest = firstUnstarted.get();
-        }
-        int highestOrder = highestActiveQuest.getQuestData().getOrder();
-        GameQuest rewindTarget = getChildQuests().values().stream().filter(q -> {
-            return q.getQuestData() != null;
-        }).filter(q -> {
-            return q.getQuestData().isRewind() && q.getQuestData().getOrder() <= highestOrder;
-        }).max(Comparator.comparingInt(a -> {
-            return a.getQuestData().getOrder();
-        })).orElse(null);
-        return rewindTo(rewindTarget != null ? rewindTarget : highestActiveQuest, false);
-    }
+                public List<Position> rewind() {
+                    Grasscutter.getLogger().debug("rewind2");
+                    if (this.questManager == null) {
+                        this.questManager = getOwner().getQuestManager();
+                    }
+                    GameQuest highestActiveQuest = getActiveQuests().stream().filter(q -> {
+                        return q.getQuestData() != null;
+                    }).max(Comparator.comparing(q -> {
+                        return Integer.valueOf(q.getQuestData().getOrder());
+                    })).orElse(null);
+                    if (highestActiveQuest == null) {
+                        Optional<GameQuest> firstUnstarted = getChildQuests().values().stream().filter(q -> {
+                            return (q.getQuestData() == null || q.getState().getValue() == QuestState.FINISHED.getValue()) ? false : true;
+                        }).min(Comparator.comparingInt(a -> {
+                            return a.getQuestData().getOrder();
+                        }));
+                        if (firstUnstarted.isEmpty()) {
+                            return null;
+                        }
+                        highestActiveQuest = firstUnstarted.get();
+                    }
+                    int highestOrder = highestActiveQuest.getQuestData().getOrder();
+                    GameQuest rewindTarget = getChildQuests().values().stream().filter(q -> {
+                        return q.getQuestData() != null;
+                    }).filter(q -> {
+                        return q.getQuestData().isRewind() && q.getQuestData().getOrder() <= highestOrder;
+                    }).max(Comparator.comparingInt(a -> {
+                        return a.getQuestData().getOrder();
+                    })).orElse(null);
+                    return rewindTo(rewindTarget != null ? rewindTarget : highestActiveQuest, false);
+                }
 
-    public void checkProgress() {
-        for (GameQuest quest : getChildQuests().values()) {
-            if (quest.getState() == QuestState.QUEST_STATE_UNFINISHED) {
-                this.questManager.checkQuestAlreadyFullfilled(quest);
-            }
-        }
-    }
-
-    public void tryFailSubQuests(QuestTrigger condType, String paramStr, int... params) {
-        try {
-            for (GameQuest subQuestWithCond : getChildQuests().values().stream().filter(p -> {
-                return p.getState() == QuestState.QUEST_STATE_UNFINISHED;
-            }).filter(p -> {
-                return p.getQuestData().getFailCond().stream().anyMatch(q -> {
-                    return q.getType() == condType;
-                });
-            }).toList()) {
-                List<QuestData.QuestCondition> failCond = subQuestWithCond.getQuestData().getFailCond();
-                for (int i = 0; i < subQuestWithCond.getQuestData().getFailCond().size(); i++) {
-                    QuestData.QuestCondition condition = failCond.get(i);
-                    if (condition.getType() == condType) {
-                        boolean result = getOwner().getServer().getQuestSystem().triggerContent(subQuestWithCond, condition, paramStr, params);
-                        subQuestWithCond.getFailProgressList()[i] = result ? 1 : 0;
-                        if (result) {
-                            getOwner().getSession().send(new PacketQuestProgressUpdateNotify(subQuestWithCond));
+                public void checkProgress() {
+                    for (GameQuest quest : getChildQuests().values()) {
+                        if (quest.getState() == QuestState.QUEST_STATE_UNFINISHED) {
+                            this.questManager.checkQuestAlreadyFullfilled(quest);
                         }
                     }
                 }
-                if (LogicType.calculate(subQuestWithCond.getQuestData().getFailCondComb(), subQuestWithCond.getFailProgressList())) {
-                    subQuestWithCond.fail();
-                }
-            }
-        } catch (Exception e) {
-            Grasscutter.getLogger().error("An error occurred while trying to fail quest.", (Throwable) e);
-        }
-    }
 
-    public void tryFinishSubQuests(QuestTrigger condType, String paramStr, int... params) {
-        try {
-            for (GameQuest subQuestWithCond : getChildQuests().values().stream().filter(p -> {
-                return p.getState() == QuestState.QUEST_STATE_UNFINISHED && p.getQuestData().getAcceptCond() != null;
-            }).filter(p -> {
-                return p.getQuestData().getFinishCond().stream().anyMatch(q -> {
-                    return q.getType() == condType;
-                });
-            }).toList()) {
-                List<QuestData.QuestCondition> finishCond = subQuestWithCond.getQuestData().getFinishCond();
-                int[] listdone = subQuestWithCond.getFinishProgressList();
-                if (listdone == null) {
-                    Grasscutter.getLogger().warn("is done");
-                } else {
-                    for (int i = 0; i < finishCond.size(); i++) {
-                        QuestData.QuestCondition condition = finishCond.get(i);
-                        if (condition.getType() == condType) {
-                            boolean result = getOwner().getServer().getQuestSystem().triggerContent(subQuestWithCond, condition, paramStr, params);
-                            listdone[i] = result ? 1 : 0;
-                            if (result) {
-                                getOwner().getSession().send(new PacketQuestProgressUpdateNotify(subQuestWithCond));
+                public void tryFailSubQuests(QuestTrigger condType, String paramStr, int... params) {
+                    try {
+                        for (GameQuest subQuestWithCond : getChildQuests().values().stream().filter(p -> {
+                            return p.getState() == QuestState.QUEST_STATE_UNFINISHED;
+                        }).filter(p -> {
+                            return p.getQuestData().getFailCond().stream().anyMatch(q -> {
+                                return q.getType() == condType;
+                            });
+                        }).toList()) {
+                            List<QuestData.QuestCondition> failCond = subQuestWithCond.getQuestData().getFailCond();
+                            for (int i = 0; i < subQuestWithCond.getQuestData().getFailCond().size(); i++) {
+                                QuestData.QuestCondition condition = failCond.get(i);
+                                if (condition.getType() == condType) {
+                                    boolean result = getOwner().getServer().getQuestSystem().triggerContent(subQuestWithCond, condition, paramStr, params);
+                                    subQuestWithCond.getFailProgressList()[i] = result ? 1 : 0;
+                                    if (result) {
+                                        getOwner().getSession().send(new PacketQuestProgressUpdateNotify(subQuestWithCond));
+                                    }
+                                }
+                            }
+                            if (LogicType.calculate(subQuestWithCond.getQuestData().getFailCondComb(), subQuestWithCond.getFailProgressList())) {
+                                subQuestWithCond.fail();
+                            }
+                        }
+                    } catch (Exception e) {
+                        Grasscutter.getLogger().error("An error occurred while trying to fail quest.", (Throwable) e);
+                    }
+                }
+
+                public void tryFinishSubQuests(QuestTrigger condType, String paramStr, int... params) {
+                    try {
+                        for (GameQuest subQuestWithCond : getChildQuests().values().stream().filter(p -> {
+                            return p.getState() == QuestState.QUEST_STATE_UNFINISHED && p.getQuestData().getAcceptCond() != null;
+                        }).filter(p -> {
+                            return p.getQuestData().getFinishCond().stream().anyMatch(q -> {
+                                return q.getType() == condType;
+                            });
+                        }).toList()) {
+                            List<QuestData.QuestCondition> finishCond = subQuestWithCond.getQuestData().getFinishCond();
+                            int[] listdone = subQuestWithCond.getFinishProgressList();
+                            if (listdone == null) {
+                                Grasscutter.getLogger().warn("is done");
+                            } else {
+                                for (int i = 0; i < finishCond.size(); i++) {
+                                    QuestData.QuestCondition condition = finishCond.get(i);
+                                    if (condition.getType() == condType) {
+                                        boolean result = getOwner().getServer().getQuestSystem().triggerContent(subQuestWithCond, condition, paramStr, params);
+                                        listdone[i] = result ? 1 : 0;
+                                        if (result) {
+                                            getOwner().getSession().send(new PacketQuestProgressUpdateNotify(subQuestWithCond));
+                                        }
+                                    }
+                                }
+                                if (LogicType.calculate(subQuestWithCond.getQuestData().getFinishCondComb(), subQuestWithCond.getFinishProgressList())) {
+                                    subQuestWithCond.finish();
+                                }
+                            }
+                        }
+                    } catch (Exception e) {
+                        Grasscutter.getLogger().warn("An error occurred while trying to finish quest.", (Throwable) e);
+                    }
+                }
+
+                public void save() {
+                    DatabaseHelper.saveQuest(this);
+                }
+
+                public void delete() {
+                    DatabaseHelper.deleteQuest(this);
+                }
+
+                public ParentQuestOuterClass.ParentQuest toProto(boolean withChildQuests) {
+                    ParentQuestOuterClass.ParentQuest.Builder proto = ParentQuestOuterClass.ParentQuest.newBuilder().setParentQuestId(getParentQuestId()).setIsFinished(isFinished()).setParentQuestState(getState().getValue()).setVideoKey(QuestManager.getQuestKey(this.parentQuestId));
+                    if (withChildQuests) {
+                        for (GameQuest quest : getChildQuests().values()) {
+                            if (quest.getState() != QuestState.QUEST_STATE_UNSTARTED) {
+                                proto.addChildQuestList(ChildQuestOuterClass.ChildQuest.newBuilder().setQuestId(quest.getSubQuestId()).setState(quest.getState().getValue()).build());
                             }
                         }
                     }
-                    if (LogicType.calculate(subQuestWithCond.getQuestData().getFinishCondComb(), subQuestWithCond.getFinishProgressList())) {
-                        subQuestWithCond.finish();
+                    for (int i : getQuestVars()) {
+                        proto.addQuestVar(i);
                     }
+                    return proto.build();
                 }
             }
-        } catch (Exception e) {
-            Grasscutter.getLogger().warn("An error occurred while trying to finish quest.", (Throwable) e);
-        }
-    }
-
-    public void save() {
-        DatabaseHelper.saveQuest(this);
-    }
-
-    public void delete() {
-        DatabaseHelper.deleteQuest(this);
-    }
-
-    public ParentQuestOuterClass.ParentQuest toProto(boolean withChildQuests) {
-        ParentQuestOuterClass.ParentQuest.Builder proto = ParentQuestOuterClass.ParentQuest.newBuilder().setParentQuestId(getParentQuestId()).setIsFinished(isFinished()).setParentQuestState(getState().getValue()).setVideoKey(QuestManager.getQuestKey(this.parentQuestId));
-        if (withChildQuests) {
-            for (GameQuest quest : getChildQuests().values()) {
-                if (quest.getState() != QuestState.QUEST_STATE_UNSTARTED) {
-                    proto.addChildQuestList(ChildQuestOuterClass.ChildQuest.newBuilder().setQuestId(quest.getSubQuestId()).setState(quest.getState().getValue()).build());
-                }
-            }
-        }
-        for (int i : getQuestVars()) {
-            proto.addQuestVar(i);
-        }
-        return proto.build();
-    }
-}

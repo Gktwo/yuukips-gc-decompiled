@@ -7,9 +7,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/* access modifiers changed from: package-private */
 @Immutable
 /* loaded from: grasscutter.jar:com/mongodb/DBCollectionObjectFactory.class */
-final class DBCollectionObjectFactory implements DBObjectFactory {
+public final class DBCollectionObjectFactory implements DBObjectFactory {
     private final Map<List<String>, Class<? extends DBObject>> pathToClassMap;
 
     /* access modifiers changed from: package-private */

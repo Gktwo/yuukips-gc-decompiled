@@ -345,7 +345,7 @@ public abstract class AbstractCharBigList extends AbstractCharCollection impleme
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r0v5, types: [it.unimi.dsi.fastutil.chars.CharBigListIterator] */
     /* JADX WARN: Type inference failed for: r1v4, types: [long] */
-    /* JADX WARN: Type inference failed for: r2v3, types: [char[][], long] */
+    /* JADX WARN: Type inference failed for: r2v3, types: [long, char[][]] */
     /* JADX WARN: Type inference failed for: r1v10, types: [long] */
     /* JADX WARNING: Unknown variable types count: 2 */
     @Override // p014it.unimi.dsi.fastutil.chars.CharBigList
@@ -423,7 +423,7 @@ public abstract class AbstractCharBigList extends AbstractCharCollection impleme
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r11v0, types: [it.unimi.dsi.fastutil.chars.AbstractCharBigList, long] */
+    /* JADX WARN: Type inference failed for: r11v0, types: [long, it.unimi.dsi.fastutil.chars.AbstractCharBigList] */
     /* JADX WARN: Type inference failed for: r12v0, types: [long] */
     /* JADX WARN: Type inference failed for: r17v0, types: [long] */
     /* JADX WARN: Type inference failed for: r0v8, types: [it.unimi.dsi.fastutil.chars.CharBigListIterator] */
@@ -536,7 +536,7 @@ public abstract class AbstractCharBigList extends AbstractCharCollection impleme
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r15v0, types: [char[][], long] */
+    /* JADX WARN: Type inference failed for: r15v0, types: [long, char[][]] */
     /* JADX WARN: Type inference failed for: r0v8, types: [it.unimi.dsi.fastutil.chars.CharBigListIterator] */
     /* JADX WARN: Type inference failed for: r20v0 */
     /* JADX WARN: Type inference failed for: r20v1, types: [long] */

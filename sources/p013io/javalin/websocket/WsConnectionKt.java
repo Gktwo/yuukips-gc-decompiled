@@ -12,7 +12,6 @@ import org.eclipse.jetty.websocket.servlet.ServletUpgradeRequest;
 /* renamed from: io.javalin.websocket.WsConnectionKt */
 /* loaded from: grasscutter.jar:io/javalin/websocket/WsConnectionKt.class */
 public final class WsConnectionKt {
-    /* access modifiers changed from: private */
     public static final String uriNoContextPath(Session $this$uriNoContextPath) {
         String path = $this$uriNoContextPath.getUpgradeRequest().getRequestURI().getPath();
         Intrinsics.checkNotNullExpressionValue(path, "this.upgradeRequest.requestURI.path");

@@ -8,8 +8,9 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.RandomAccess;
 
+/* access modifiers changed from: package-private */
 /* loaded from: grasscutter.jar:com/google/protobuf/SchemaUtil.class */
-final class SchemaUtil {
+public final class SchemaUtil {
     private static final Class<?> GENERATED_MESSAGE_CLASS = getGeneratedMessageClass();
     private static final UnknownFieldSchema<?, ?> PROTO2_UNKNOWN_FIELD_SET_SCHEMA = getUnknownFieldSetSchema(false);
     private static final UnknownFieldSchema<?, ?> PROTO3_UNKNOWN_FIELD_SET_SCHEMA = getUnknownFieldSetSchema(true);

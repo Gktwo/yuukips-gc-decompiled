@@ -4,9 +4,8 @@ import org.jctools.util.Pow2;
 import org.jctools.util.RangeUtil;
 
 /* compiled from: MpscCompoundQueue.java */
-/* access modifiers changed from: package-private */
 /* loaded from: grasscutter.jar:org/jctools/queues/MpscCompoundQueueColdFields.class */
-public abstract class MpscCompoundQueueColdFields<E> extends MpscCompoundQueueL0Pad<E> {
+abstract class MpscCompoundQueueColdFields<E> extends MpscCompoundQueueL0Pad<E> {
     protected final int parallelQueues;
     protected final int parallelQueuesMask;
     protected final MpscArrayQueue<E>[] queues;

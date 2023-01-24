@@ -84,7 +84,7 @@ public interface ByteBigList extends BigList<Byte>, ByteCollection, Comparable<B
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r15v0, types: [byte[][], long] */
+    /* JADX WARN: Type inference failed for: r15v0, types: [long, byte[][]] */
     /* JADX WARN: Type inference failed for: r0v9, types: [it.unimi.dsi.fastutil.bytes.ByteBigListIterator] */
     /* JADX WARN: Type inference failed for: r20v0 */
     /* JADX WARN: Type inference failed for: r20v1, types: [long] */

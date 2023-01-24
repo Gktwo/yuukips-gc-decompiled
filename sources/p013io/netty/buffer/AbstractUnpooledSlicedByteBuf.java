@@ -101,9 +101,8 @@ public abstract class AbstractUnpooledSlicedByteBuf extends AbstractDerivedByteB
         return unwrap().getByte(idx(index));
     }
 
-    /* access modifiers changed from: protected */
     @Override // p013io.netty.buffer.AbstractByteBuf
-    public byte _getByte(int index) {
+    protected byte _getByte(int index) {
         return unwrap().getByte(idx(index));
     }
 
@@ -113,9 +112,8 @@ public abstract class AbstractUnpooledSlicedByteBuf extends AbstractDerivedByteB
         return unwrap().getShort(idx(index));
     }
 
-    /* access modifiers changed from: protected */
     @Override // p013io.netty.buffer.AbstractByteBuf
-    public short _getShort(int index) {
+    protected short _getShort(int index) {
         return unwrap().getShort(idx(index));
     }
 
@@ -125,9 +123,8 @@ public abstract class AbstractUnpooledSlicedByteBuf extends AbstractDerivedByteB
         return unwrap().getShortLE(idx(index));
     }
 
-    /* access modifiers changed from: protected */
     @Override // p013io.netty.buffer.AbstractByteBuf
-    public short _getShortLE(int index) {
+    protected short _getShortLE(int index) {
         return unwrap().getShortLE(idx(index));
     }
 
@@ -137,9 +134,8 @@ public abstract class AbstractUnpooledSlicedByteBuf extends AbstractDerivedByteB
         return unwrap().getUnsignedMedium(idx(index));
     }
 
-    /* access modifiers changed from: protected */
     @Override // p013io.netty.buffer.AbstractByteBuf
-    public int _getUnsignedMedium(int index) {
+    protected int _getUnsignedMedium(int index) {
         return unwrap().getUnsignedMedium(idx(index));
     }
 
@@ -149,9 +145,8 @@ public abstract class AbstractUnpooledSlicedByteBuf extends AbstractDerivedByteB
         return unwrap().getUnsignedMediumLE(idx(index));
     }
 
-    /* access modifiers changed from: protected */
     @Override // p013io.netty.buffer.AbstractByteBuf
-    public int _getUnsignedMediumLE(int index) {
+    protected int _getUnsignedMediumLE(int index) {
         return unwrap().getUnsignedMediumLE(idx(index));
     }
 
@@ -161,9 +156,8 @@ public abstract class AbstractUnpooledSlicedByteBuf extends AbstractDerivedByteB
         return unwrap().getInt(idx(index));
     }
 
-    /* access modifiers changed from: protected */
     @Override // p013io.netty.buffer.AbstractByteBuf
-    public int _getInt(int index) {
+    protected int _getInt(int index) {
         return unwrap().getInt(idx(index));
     }
 
@@ -173,9 +167,8 @@ public abstract class AbstractUnpooledSlicedByteBuf extends AbstractDerivedByteB
         return unwrap().getIntLE(idx(index));
     }
 
-    /* access modifiers changed from: protected */
     @Override // p013io.netty.buffer.AbstractByteBuf
-    public int _getIntLE(int index) {
+    protected int _getIntLE(int index) {
         return unwrap().getIntLE(idx(index));
     }
 
@@ -185,9 +178,8 @@ public abstract class AbstractUnpooledSlicedByteBuf extends AbstractDerivedByteB
         return unwrap().getLong(idx(index));
     }
 
-    /* access modifiers changed from: protected */
     @Override // p013io.netty.buffer.AbstractByteBuf
-    public long _getLong(int index) {
+    protected long _getLong(int index) {
         return unwrap().getLong(idx(index));
     }
 
@@ -197,9 +189,8 @@ public abstract class AbstractUnpooledSlicedByteBuf extends AbstractDerivedByteB
         return unwrap().getLongLE(idx(index));
     }
 
-    /* access modifiers changed from: protected */
     @Override // p013io.netty.buffer.AbstractByteBuf
-    public long _getLongLE(int index) {
+    protected long _getLongLE(int index) {
         return unwrap().getLongLE(idx(index));
     }
 
@@ -254,9 +245,8 @@ public abstract class AbstractUnpooledSlicedByteBuf extends AbstractDerivedByteB
         return unwrap().getCharSequence(idx(index), length, charset);
     }
 
-    /* access modifiers changed from: protected */
     @Override // p013io.netty.buffer.AbstractByteBuf
-    public void _setByte(int index, int value) {
+    protected void _setByte(int index, int value) {
         unwrap().setByte(idx(index), value);
     }
 
@@ -267,9 +257,8 @@ public abstract class AbstractUnpooledSlicedByteBuf extends AbstractDerivedByteB
         return this;
     }
 
-    /* access modifiers changed from: protected */
     @Override // p013io.netty.buffer.AbstractByteBuf
-    public void _setShort(int index, int value) {
+    protected void _setShort(int index, int value) {
         unwrap().setShort(idx(index), value);
     }
 
@@ -280,9 +269,8 @@ public abstract class AbstractUnpooledSlicedByteBuf extends AbstractDerivedByteB
         return this;
     }
 
-    /* access modifiers changed from: protected */
     @Override // p013io.netty.buffer.AbstractByteBuf
-    public void _setShortLE(int index, int value) {
+    protected void _setShortLE(int index, int value) {
         unwrap().setShortLE(idx(index), value);
     }
 
@@ -293,9 +281,8 @@ public abstract class AbstractUnpooledSlicedByteBuf extends AbstractDerivedByteB
         return this;
     }
 
-    /* access modifiers changed from: protected */
     @Override // p013io.netty.buffer.AbstractByteBuf
-    public void _setMedium(int index, int value) {
+    protected void _setMedium(int index, int value) {
         unwrap().setMedium(idx(index), value);
     }
 
@@ -306,9 +293,8 @@ public abstract class AbstractUnpooledSlicedByteBuf extends AbstractDerivedByteB
         return this;
     }
 
-    /* access modifiers changed from: protected */
     @Override // p013io.netty.buffer.AbstractByteBuf
-    public void _setMediumLE(int index, int value) {
+    protected void _setMediumLE(int index, int value) {
         unwrap().setMediumLE(idx(index), value);
     }
 
@@ -319,9 +305,8 @@ public abstract class AbstractUnpooledSlicedByteBuf extends AbstractDerivedByteB
         return this;
     }
 
-    /* access modifiers changed from: protected */
     @Override // p013io.netty.buffer.AbstractByteBuf
-    public void _setInt(int index, int value) {
+    protected void _setInt(int index, int value) {
         unwrap().setInt(idx(index), value);
     }
 
@@ -332,9 +317,8 @@ public abstract class AbstractUnpooledSlicedByteBuf extends AbstractDerivedByteB
         return this;
     }
 
-    /* access modifiers changed from: protected */
     @Override // p013io.netty.buffer.AbstractByteBuf
-    public void _setIntLE(int index, int value) {
+    protected void _setIntLE(int index, int value) {
         unwrap().setIntLE(idx(index), value);
     }
 
@@ -345,9 +329,8 @@ public abstract class AbstractUnpooledSlicedByteBuf extends AbstractDerivedByteB
         return this;
     }
 
-    /* access modifiers changed from: protected */
     @Override // p013io.netty.buffer.AbstractByteBuf
-    public void _setLong(int index, long value) {
+    protected void _setLong(int index, long value) {
         unwrap().setLong(idx(index), value);
     }
 
@@ -358,9 +341,8 @@ public abstract class AbstractUnpooledSlicedByteBuf extends AbstractDerivedByteB
         return this;
     }
 
-    /* access modifiers changed from: protected */
     @Override // p013io.netty.buffer.AbstractByteBuf
-    public void _setLongLE(int index, long value) {
+    protected void _setLongLE(int index, long value) {
         unwrap().setLongLE(idx(index), value);
     }
 

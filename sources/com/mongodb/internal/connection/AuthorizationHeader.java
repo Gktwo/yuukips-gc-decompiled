@@ -12,8 +12,9 @@ import javax.crypto.spec.SecretKeySpec;
 import javax.security.sasl.SaslException;
 import org.bson.internal.Base64;
 
+/* access modifiers changed from: package-private */
 /* loaded from: grasscutter.jar:com/mongodb/internal/connection/AuthorizationHeader.class */
-final class AuthorizationHeader {
+public final class AuthorizationHeader {
     private static final String AWS4_HMAC_SHA256 = "AWS4-HMAC-SHA256";
     private static final String SERVICE = "sts";
     private final String host;
@@ -147,8 +148,9 @@ final class AuthorizationHeader {
         return new Builder();
     }
 
+    /* access modifiers changed from: package-private */
     /* loaded from: grasscutter.jar:com/mongodb/internal/connection/AuthorizationHeader$Builder.class */
-    static final class Builder {
+    public static final class Builder {
         private String accessKeyID;
         private String secretKey;
         private String sessionToken;

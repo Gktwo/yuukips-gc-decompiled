@@ -854,16 +854,16 @@ public final class ByteBufUtil {
     /* JADX DEBUG: Multi-variable search result rejected for r8v0, resolved type: byte[] */
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r0v2, types: [long] */
-    /* JADX WARN: Type inference failed for: r15v1, types: [java.lang.Object, long] */
+    /* JADX WARN: Type inference failed for: r15v1, types: [long, java.lang.Object] */
     /* JADX WARN: Type inference failed for: r15v2 */
-    /* JADX WARN: Type inference failed for: r2v1, types: [java.lang.Object, long] */
-    /* JADX WARN: Type inference failed for: r2v6, types: [java.lang.Object, long] */
+    /* JADX WARN: Type inference failed for: r2v1, types: [long, java.lang.Object] */
+    /* JADX WARN: Type inference failed for: r2v6, types: [long, java.lang.Object] */
     /* JADX WARN: Type inference failed for: r15v7, types: [long] */
-    /* JADX WARN: Type inference failed for: r2v19, types: [java.lang.Object, long] */
-    /* JADX WARN: Type inference failed for: r2v24, types: [java.lang.Object, long] */
-    /* JADX WARN: Type inference failed for: r2v29, types: [java.lang.Object, long] */
-    /* JADX WARN: Type inference failed for: r2v39, types: [java.lang.Object, long] */
-    /* JADX WARN: Type inference failed for: r2v53, types: [java.lang.Object, long] */
+    /* JADX WARN: Type inference failed for: r2v19, types: [long, java.lang.Object] */
+    /* JADX WARN: Type inference failed for: r2v24, types: [long, java.lang.Object] */
+    /* JADX WARN: Type inference failed for: r2v29, types: [long, java.lang.Object] */
+    /* JADX WARN: Type inference failed for: r2v39, types: [long, java.lang.Object] */
+    /* JADX WARN: Type inference failed for: r2v53, types: [long, java.lang.Object] */
     /* JADX WARN: Type inference failed for: r15v19 */
     /* JADX WARN: Type inference failed for: r15v20 */
     /* JADX WARNING: Unknown variable types count: 8 */

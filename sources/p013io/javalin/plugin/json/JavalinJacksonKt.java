@@ -10,6 +10,7 @@ import p013io.javalin.core.util.Util;
 /* renamed from: io.javalin.plugin.json.JavalinJacksonKt */
 /* loaded from: grasscutter.jar:io/javalin/plugin/json/JavalinJacksonKt.class */
 public final class JavalinJacksonKt {
+    /* access modifiers changed from: private */
     public static final ObjectMapper registerOptionalModule(ObjectMapper $this$registerOptionalModule, String classString) {
         if (Util.INSTANCE.classExists(classString)) {
             Object newInstance = Class.forName(classString).getConstructor(new Class[0]).newInstance(new Object[0]);

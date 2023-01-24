@@ -21,9 +21,8 @@ public class GZIPContentDecoder extends org.eclipse.jetty.http.GZIPContentDecode
         super(byteBufferPool, bufferSize);
     }
 
-    /* access modifiers changed from: protected */
     @Override // org.eclipse.jetty.http.GZIPContentDecoder
-    public boolean decodedChunk(ByteBuffer chunk) {
+    protected boolean decodedChunk(ByteBuffer chunk) {
         decodedChunk(chunk);
         return true;
     }

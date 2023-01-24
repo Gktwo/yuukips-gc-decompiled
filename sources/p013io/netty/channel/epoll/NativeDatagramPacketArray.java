@@ -79,9 +79,10 @@ public final class NativeDatagramPacketArray {
         this.iovArray.release();
     }
 
+    /* access modifiers changed from: private */
     /* renamed from: io.netty.channel.epoll.NativeDatagramPacketArray$MyMessageProcessor */
     /* loaded from: grasscutter.jar:io/netty/channel/epoll/NativeDatagramPacketArray$MyMessageProcessor.class */
-    private final class MyMessageProcessor implements ChannelOutboundBuffer.MessageProcessor {
+    public final class MyMessageProcessor implements ChannelOutboundBuffer.MessageProcessor {
         private boolean connected;
         private int maxMessagesPerWrite;
 

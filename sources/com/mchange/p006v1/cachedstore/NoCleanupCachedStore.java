@@ -5,9 +5,10 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
+/* access modifiers changed from: package-private */
 /* renamed from: com.mchange.v1.cachedstore.NoCleanupCachedStore */
 /* loaded from: grasscutter.jar:com/mchange/v1/cachedstore/NoCleanupCachedStore.class */
-class NoCleanupCachedStore implements TweakableCachedStore {
+public class NoCleanupCachedStore implements TweakableCachedStore {
     static final boolean DEBUG = true;
     protected Map cache = new HashMap();
     CachedStore.Manager manager;

@@ -7,10 +7,9 @@ import kotlin.jvm.internal.Intrinsics;
 import org.jetbrains.annotations.NotNull;
 
 /* compiled from: TypesJVM.kt */
-/* access modifiers changed from: package-private */
 @Metadata(m371mv = {1, 6, 0}, m372k = 3, m369xi = 48)
 /* loaded from: grasscutter.jar:kotlin/reflect/TypesJVMKt$typeToString$unwrap$1.class */
-public /* synthetic */ class TypesJVMKt$typeToString$unwrap$1 extends FunctionReferenceImpl implements Function1<Class<?>, Class<?>> {
+/* synthetic */ class TypesJVMKt$typeToString$unwrap$1 extends FunctionReferenceImpl implements Function1<Class<?>, Class<?>> {
     public static final TypesJVMKt$typeToString$unwrap$1 INSTANCE = new TypesJVMKt$typeToString$unwrap$1();
 
     TypesJVMKt$typeToString$unwrap$1() {

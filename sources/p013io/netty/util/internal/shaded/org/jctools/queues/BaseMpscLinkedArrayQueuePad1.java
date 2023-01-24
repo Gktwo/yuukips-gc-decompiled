@@ -4,9 +4,10 @@ import java.util.AbstractQueue;
 import p013io.netty.util.internal.shaded.org.jctools.queues.IndexedQueueSizeUtil;
 
 /* compiled from: BaseMpscLinkedArrayQueue.java */
+/* access modifiers changed from: package-private */
 /* renamed from: io.netty.util.internal.shaded.org.jctools.queues.BaseMpscLinkedArrayQueuePad1 */
 /* loaded from: grasscutter.jar:io/netty/util/internal/shaded/org/jctools/queues/BaseMpscLinkedArrayQueuePad1.class */
-abstract class BaseMpscLinkedArrayQueuePad1<E> extends AbstractQueue<E> implements IndexedQueueSizeUtil.IndexedQueue {
+public abstract class BaseMpscLinkedArrayQueuePad1<E> extends AbstractQueue<E> implements IndexedQueueSizeUtil.IndexedQueue {
     byte b000;
     byte b001;
     byte b002;

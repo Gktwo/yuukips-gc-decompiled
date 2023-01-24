@@ -4,8 +4,9 @@ import org.luaj.vm2.Varargs;
 import org.luaj.vm2.lib.VarArgFunction;
 import org.luaj.vm2.lib.jse.CoerceLuaToJava;
 
+/* access modifiers changed from: package-private */
 /* loaded from: grasscutter.jar:org/luaj/vm2/lib/jse/JavaMember.class */
-abstract class JavaMember extends VarArgFunction {
+public abstract class JavaMember extends VarArgFunction {
     static final int METHOD_MODIFIERS_VARARGS = 128;
     final CoerceLuaToJava.Coercion[] fixedargs;
     final CoerceLuaToJava.Coercion varargs;

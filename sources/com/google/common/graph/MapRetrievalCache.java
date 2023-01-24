@@ -2,9 +2,8 @@ package com.google.common.graph;
 
 import java.util.Map;
 
-/* access modifiers changed from: package-private */
 /* loaded from: grasscutter.jar:com/google/common/graph/MapRetrievalCache.class */
-public class MapRetrievalCache<K, V> extends MapIteratorCache<K, V> {
+class MapRetrievalCache<K, V> extends MapIteratorCache<K, V> {
     private transient CacheEntry<K, V> cacheEntry1;
     private transient CacheEntry<K, V> cacheEntry2;
 

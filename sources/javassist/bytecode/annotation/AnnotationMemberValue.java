@@ -18,15 +18,13 @@ public class AnnotationMemberValue extends MemberValue {
         this.value = a;
     }
 
-    /* access modifiers changed from: package-private */
     @Override // javassist.bytecode.annotation.MemberValue
-    public Object getValue(ClassLoader cl, ClassPool cp, Method m) throws ClassNotFoundException {
+    Object getValue(ClassLoader cl, ClassPool cp, Method m) throws ClassNotFoundException {
         return AnnotationImpl.make(cl, getType(cl), cp, this.value);
     }
 
-    /* access modifiers changed from: package-private */
     @Override // javassist.bytecode.annotation.MemberValue
-    public Class<?> getType(ClassLoader cl) throws ClassNotFoundException {
+    Class<?> getType(ClassLoader cl) throws ClassNotFoundException {
         if (this.value != null) {
             return loadClass(cl, this.value.getTypeName());
         }
